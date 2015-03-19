@@ -1,0 +1,90 @@
+Alphabet
+
+ а б в г д е ё ж з и й к л м н ӈ о п р с т у ф х ц ч ш щ ъ ы ь э ю я
+ А Б В Г Д Е Ё Ж З И Й К Л М Н Ӈ О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я
+
+ %{ː%}:̄
+
+ %{L%}:л %{L%}:р
+ %{G%}:г %{G%}:к %{G%}:ӈ
+ %{D%}:д %{D%}:т 
+ %{A%}:а %{A%}:э %{A%}:о
+ %{Я%}:я %{Я%}:е %{Я%}:ё %{Я%}:а %{Я%}:э %{Я%}:о
+ %{V%}:в %{V%}:м
+
+ %{j%}:0 %{j%}:й
+ %{i%}:0 %{i%}:и 
+
+ %>:0  ;
+
+Sets
+
+Vow = а е ё и о у ы э ю я 
+      А Е Ё И О У Ы Э Ю Я ;
+
+Cons = б в г д ж з й к л м н ӈ п р с т ф х ц ч ш щ 
+       Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ ;
+
+Nasal = м н ӈ
+        М Н Ӈ ; 
+
+VoicelessCns = к с т п ;
+
+Rules 
+
+"Remove suffix vowel with vowel-ending stem"
+%{i%}:0 <=>  :Vow (%{ː%}:) %>: _ ;
+
+"Assimilate possessive to plural"
+%{L%}:Cx <=> Cx %>: _ ;
+       where Cx in ( л р ) ;
+
+"Consonant assimilation in suffixes"
+%{G%}:Cx <=> Cy %>: _ ;
+       where Cy in ( к с т п м н ӈ ) 
+             Cx in ( к к к к ӈ ӈ ӈ ) 
+       matched ; 
+
+"Voicing assimilation"
+%{D%}:т <=> :VoicelessCns %>: _ ; 
+
+! TODO: Short/Long
+"Long vowel harmony for {A}"
+%{A%}:Vy <=> :Vx %{ː%}: [ :Cons* :Cons ]/:0* _ ;
+         where Vx in ( а е ё о э ю я )
+               Vy in ( е а о а а е е )
+         matched ;
+
+"Short vowel harmony for {A}"
+%{A%}:Vy <=> :Vx [ :Cons* :Cons ]/:0* _ ;
+         except 
+             :Vx %{ː%}: [ :Cons* :Cons ]/:0* _ ;
+         where Vx in ( а е ё о ы э я )
+               Vy in ( а е о о е е а )
+         matched ;
+
+"Nasal assimilation of {V}" 
+%{V%}:м <=> :Nasal %>: _ ; 
+
+!"Yotised vowel harmony for %{Я%}"
+!%{Я%}:Vy <=> :Vx [ :Cons* :Cons ]/:0* _ ;
+!         except 
+!             :Vx %{ː%}: [ :Cons* :Cons ]/:0* _ ;
+!            :Vx :н %>: _ ;
+!         where Vx in ( а е ё о ы э я )
+!               Vy in ( я е ё ё е е я )
+!         matched ;
+!
+!# дяв>{Я}>{i}в
+!# дяв0я00в
+!@ д я в >:0 {Я}:я >:0 {i}:0 в
+
+"Non-yotised vowel harmony for %{Я%}"
+%{Я%}:Vy <=> Vx: н %>: _ ;
+         where Vx in ( а е ё о ы э я )
+               Vy in ( а э о о э э а )
+         matched ;
+
+!# орон>{Я}>{i}в
+!# орон0о00в
+!@ о р о н >:0 {Я}:о >:0 {i}:0 в

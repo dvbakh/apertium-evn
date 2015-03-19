@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+libdir=@libdir@
+dir=@libdir@/apertium/apertium-evn
+srcdir=@datarootdir@/apertium/apertium-evn
+
+Name: apertium-evn
+Description: Finite-state morphological transducer and constraint grammar for evn 
+Version: @VERSION@
+
