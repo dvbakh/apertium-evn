@@ -171,8 +171,8 @@
 %{r%}                ! -р -т -л -н -ø
 %{g%}                ! -г -к -ø
 
-%{1%}
-%{2%}
+%{1%}                ! for Vow1 vowel harmony (suffixes with -а -я are chosen)
+%{2%}                ! for Vow2 vowel harmony (suffixes with -э -е are chosen)
 %{ː%}
 
 %>                   ! Morpheme boundary
