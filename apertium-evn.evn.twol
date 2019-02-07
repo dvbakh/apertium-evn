@@ -1,20 +1,30 @@
 Alphabet
 
- а б в г д е ё ж з и й к л м н ӈ о п р с т у ф х ц ч ш щ ъ ы ь э ю я
- А Б В Г Д Е Ё Ж З И Й К Л М Н Ӈ О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я
+ а б в г д е ё ж з и й к л м н ӈ о п р с т у ф х һ ц ч ш щ ъ ы ь э ю я
+ А Б В Г Д Е Ё Ж З И Й К Л М Н Ӈ О П Р С Т У Ф Х Һ Ц Ч Ш Щ Ъ Ы Ь Э Ю Я
 
  %{ː%}:̄
 
  %{L%}:л %{L%}:р
  %{G%}:г %{G%}:к %{G%}:ӈ
  %{D%}:д %{D%}:т 
+ %{Du%}:ду %{Du%}:ту %{Du%}:0
  %{A%}:а %{A%}:э %{A%}:о
- %{Я%}:я %{Я%}:е %{Я%}:ё %{Я%}:а %{Я%}:э %{Я%}:о
+ %{Я%}:я %{Я%}:е %{Я%}:ё
+ %{ЪЯ%}:я %{ЪЯ%}:е %{ЪЯ%}:ё %{ЪЯ%}:ъя %{ЪЯ%}:ъе %{ЪЯ%}:ъё %{ЪЯ%}:а %{ЪЯ%}:э %{ЪЯ%}:о
+ %{Д%}:д %{Д%}:ч
+ %{Ды%}:ды %{Ды%}:т
  %{V%}:в %{V%}:м
+ %{N%}:н %{N%}:т
 
+ %{r%}:р %{r%}:т %{r%}:л %{r%}:н %{r%}:0
  %{j%}:0 %{j%}:й
  %{i%}:0 %{i%}:и 
+ %{y%}:0 %{y%}:и  %{y%}:ы
+ %{ы%}:0 %{ы%}:ы
+ %{g%}:0 %{g%}:г %{g%}:к
 
+ %{1%}:0 %{2%}:0
  %>:0  ;
 
 Sets
@@ -22,8 +32,23 @@ Sets
 Vow = а е ё и о у ы э ю я 
       А Е Ё И О У Ы Э Ю Я ;
 
-Cons = б в г д ж з й к л м н ӈ п р с т ф х ц ч ш щ 
-       Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ ;
+Vow1Long =  е э о ё
+            Е Э О Ё ;
+
+Vow1Short = а я е
+            А Я Е ;
+
+Vow2Long =  а я и у ю
+            А Я И У Ю ;
+
+Vow2Short = э ы
+            Э Ы ;
+
+VowNeutral = и у ю
+             И У Ю ;
+
+Cons = б в г д ж з й к л м н ӈ п р с т ф х һ ц ч ш щ 
+       Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Һ Ц Ч Ш Щ ;
 
 Nasal = м н ӈ
         М Н Ӈ ; 
@@ -32,8 +57,15 @@ VoicelessCns = к с т п ;
 
 Rules 
 
-"Remove suffix vowel with vowel-ending stem"
+"Remove suffix vowel {i} with vowel-ending stem"
 %{i%}:0 <=>  :Vow (%{ː%}:) %>: _ ;
+             %>: ӈ _ %>: Cons+ Vow+ ;
+
+"Remove suffix vowel {y} with vowel-ending stem"
+%{y%}:0 <=>  :Vow (%{ː%}:) %>: _ ;
+
+"{y} turns into ы before т or д"
+%{y%}:ы <=>  т | д %>: _ ;
 
 "Assimilate possessive to plural"
 %{L%}:Cx <=> Cx %>: _ ;
@@ -45,46 +77,163 @@ Rules
              Cx in ( к к к к ӈ ӈ ӈ ) 
        matched ; 
 
-"Voicing assimilation"
-%{D%}:т <=> :VoicelessCns %>: _ ; 
+"Voicing assimilation of {D}"
+%{D%}:т <=> :VoicelessCns %>: (%-) _ ; 
 
-! TODO: Short/Long
-"Long vowel harmony for {A}"
-%{A%}:Vy <=> :Vx %{ː%}: [ :Cons* :Cons ]/:0* _ ;
-         where Vx in ( а е ё о э ю я )
-               Vy in ( е а о а а е е )
-         matched ;
+"Voicing assimilation of {g}"
+%{g%}:к <=> :VoicelessCns %>: _ ; 
 
-"Short vowel harmony for {A}"
-%{A%}:Vy <=> :Vx [ :Cons* :Cons ]/:0* _ ;
-         except 
-             :Vx %{ː%}: [ :Cons* :Cons ]/:0* _ ;
-         where Vx in ( а е ё о ы э я )
-               Vy in ( а е о о е е а )
-         matched ;
+"Remove of {g} after Vow"
+%{g%}:0 <=> :Vow %>: _ ; 
+
+"Add ту after consonants + voicing assimilation"
+%{Du%}:ту <=> :VoicelessCns %>: _ ; 
+
+"Remove ду/ту after vowels"
+%{Du%}:0 <=> :Vow (%{ː%}:) %>: _ ; 
+
+"{Д} turns into ч"
+%{Д%}:ч <=> :VoicelessCns %>: _ ; 
+
+"ды appears after Cons"
+%{Ды%}:ды <=> Cons %>: _ ; 
+
+"ы appears in <loc-all> -тыки after consonants"
+%{ы%}:ы <=> Cons %>: т _ ;
+
+"т turns into ч before {i} in plural"
+т:ч <=> _ %>: %{i%}:и л;
 
 "Nasal assimilation of {V}" 
 %{V%}:м <=> :Nasal %>: _ ; 
 
-!"Yotised vowel harmony for %{Я%}"
-!%{Я%}:Vy <=> :Vx [ :Cons* :Cons ]/:0* _ ;
-!         except 
-!             :Vx %{ː%}: [ :Cons* :Cons ]/:0* _ ;
-!            :Vx :н %>: _ ;
-!         where Vx in ( а е ё о ы э я )
-!               Vy in ( я е ё ё е е я )
-!         matched ;
-!
-!# дяв>{Я}>{i}в
-!# дяв0я00в
-!@ д я в >:0 {Я}:я >:0 {i}:0 в
-
-"Non-yotised vowel harmony for %{Я%}"
-%{Я%}:Vy <=> Vx: н %>: _ ;
-         where Vx in ( а е ё о ы э я )
-               Vy in ( а э о о э э а )
+"Assimilation of {r}"
+%{r%}:Cy <=> Cx: %>: _ ;
+         where Cx in ( н к с т п л м ӈ )
+               Cy in ( 0 т т т т л н н )
          matched ;
+
+"Assimilation of {N} before suffixes starting with т, ч"
+%{N%}:т <=> _ %>: [ т | ч ] ; 
+
+"Vowel harmony for {A}: a is chosen"
+%{A%}:а <=> [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ]/:0* (%-) _ ;
+            [ о | ё ] [ [ :Cons | :Vow ] - [ о | ё ] ]+/:0* (%-) _ ;
+        except
+            [ [ Vow1Long: ~[%{ː%}:] ] | [ Vow1Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ]/:0* (%-) _ ;
+            [ о | ё ] %{ː%}: [ [ :Cons | :Vow ] - [ о | ё ] ]+/:0* (%-) _ ;
+
+"Vowel harmony for {A}: э is chosen"
+%{A%}:э <=> [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ]/:0* (%-) _ ;
+        except
+            [ [ Vow2Long: ~[%{ː%}:] ] | [ Vow2Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ]/:0* (%-) _ ;
+            [ о | ё ] %{ː%}: [ [ :Cons | :Vow ] - [ о | ё ] ]+/:0* (%-) _ ;
+
+"Vowel harmony for {A}: о is chosen"
+%{A%}:о <=> [ о | ё ] ~[%{ː%}:] [ о | ё | :Cons ]*/:0* (%-) _ ;
+        except
+            [ о | ё ] %{ː%}: [ о | ё | :Cons ]*/:0* (%-) _ ;
+
+"Vowel harmony for {Я}: я is chosen"
+%{Я%}:я <=> [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ]/:0* _ ;
+            [ о | ё ] [ [ :Cons | :Vow ] - [ о | ё ] ]+/:0* (%-) _ ;
+        except
+            [ [ Vow1Long: ~[%{ː%}:] ] | [ Vow1Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ]/:0* (%-) _ ;
+            [ о | ё ] %{ː%}: [ [ :Cons | :Vow ] - [ о | ё ] ]+/:0* (%-) _ ;
+
+"Vowel harmony for {Я}: е is chosen"
+%{Я%}:е <=> [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ]/:0* _ ;
+        except
+            [ [ Vow2Long: ~[%{ː%}:] ] | [ Vow2Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ]/:0* (%-) _ ;
+
+"Vowel harmony for {Я}: ё is chosen"
+%{Я%}:ё <=> [ о | ё ] [ о | ё | :Cons ]*/:0* _ ;
+        except
+            [ о | ё ] %{ː%}: [ о | ё | :Cons ]*/:0* (%-) _ ;
+
+"Non-yotised vowel harmony for {ЪЯ}: a is chosen"
+%{ЪЯ%}:а <=> [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ] %>: н %>: _ ;
+             [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ] %>: %{i%}: л %>: _ ;
+             [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ] %>: р %>: _ ;
+             [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ] %>: %{Д%}:ч _ ;
+         except
+             [ [ Vow1Long: ~[%{ː%}:] ] | [ Vow1Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ] %>: н %>: _ ;
+             [ [ Vow1Long: ~[%{ː%}:] ] | [ Vow1Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ] %>: %{i%}: л %>: _ ;
+             [ [ Vow1Long: ~[%{ː%}:] ] | [ Vow1Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ] %>: р %>: _ ;
+             [ [ Vow1Long: ~[%{ː%}:] ] | [ Vow1Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ] %>: %{Д%}:ч _ ;
+
+"Non-yotised vowel harmony for {ЪЯ}: э is chosen"
+%{ЪЯ%}:э <=> [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ] %>: н %>: _ ;
+             [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ] %>: %{i%}: л %>: _ ;
+             [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ] %>: р %>: _ ;
+             [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ] %>: %{Д%}:ч _ ;
+         except
+             [ [ Vow2Long: ~[%{ː%}:] ] | [ Vow2Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ] %>: н %>: _ ;
+             [ [ Vow2Long: ~[%{ː%}:] ] | [ Vow2Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ] %>: %{i%}: л %>: _ ;
+             [ [ Vow2Long: ~[%{ː%}:] ] | [ Vow2Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ] %>: р %>: _ ;
+             [ [ Vow2Long: ~[%{ː%}:] ] | [ Vow2Short: %{ː%}: ] ] [ :VowNeutral* :Cons* ] %>: %{Д%}:ч _ ;
+
+"Non-yotised vowel harmony for {ЪЯ}: о is chosen"
+%{ЪЯ%}:о <=> [ о | ё ] [ о | ё | :Cons ]* %>: н %>: _ ;
+             [ о | ё ] [ о | ё | :Cons ]* %>: %{i%}: л %>: _ ;
+             [ о | ё ] [ о | ё | :Cons ]* %>: р %>: _ ;
+             [ о | ё ] [ о | ё | :Cons ]* %>: %{Д%}:ч _ ;
+         except
+             [ о | ё ] %{ː%}: [ о | ё | :Cons ]* %>: н %>: _ ;
+             [ о | ё ] %{ː%}: [ о | ё | :Cons ]* %>: %{i%}: л %>: _ ;
+             [ о | ё ] %{ː%}: [ о | ё | :Cons ]* %>: р %>: _ ;
+             [ о | ё ] %{ː%}: [ о | ё | :Cons ]* %>: %{Д%}:ч _ ;
 
 !# орон>{Я}>{i}в
 !# орон0о00в
 !@ о р о н >:0 {Я}:о >:0 {i}:0 в
+
+"Yotised vowel harmony for {ЪЯ}: я is chosen"
+%{ЪЯ%}:я <=> [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ]/:0* _ ;
+             [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* :VowNeutral ]/:0*  _ ;
+             [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ]/:0* %>: %{Д%}:д _ ;
+
+"Yotised vowel harmony for {ЪЯ}: е is chosen"
+%{ЪЯ%}:е <=> [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ]/:0* _ ;
+             [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* :VowNeutral ]/:0*  _ ;
+             [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* ]/:0* %>: %{Д%}:д _ ;
+
+"Yotised vowel harmony for {ЪЯ}: ё is chosen"
+%{ЪЯ%}:ё <=> [ о | ё ] ~[%{ː%}:]/:0* _ ;
+             [ о | ё ] ~[%{ː%}:] [ о | ё | :Cons ]*/:0* :VowNeutral _ ;
+             [ о | ё ] ~[%{ː%}:] [ о | ё | :Cons ]*/:0* %>: %{Д%}:д _ ;
+
+"Yotised vowel harmony for {ЪЯ} after Cons: ъя is chosen"
+%{ЪЯ%}:ъя <=> [ %{1%}: | [ Vow1Long: %{ː%}: ] | [ Vow1Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* :Cons]/:0* _ ;
+         except 
+             [ [ Vow1Long: ~[%{ː%}:] ] | [ Vow1Short: %{ː%}: ] ] [ :VowNeutral* :Cons* :Cons]/:0* _ ;
+             :Vow/:0* _ ;
+             %>: н %>: _ ;
+             %>: %{i%}: л %>: _ ;
+             %>: р %>: _ ;
+             %>: %{Д%}: _ ;
+
+!# дяв>{Я}>{i}в
+!# дяв0я00в
+!@ д я в >:0 {Я}:я >:0 {i}:0 в
+
+"Yotised vowel harmony for {ЪЯ} after Cons: ъе is chosen"
+%{ЪЯ%}:ъе <=> [ %{2%}: | [ Vow2Long: %{ː%}: ] | [ Vow2Short: ~[%{ː%}:] ] ] [ :VowNeutral* :Cons* :Cons]/:0* _ ;
+         except 
+             [ [ Vow2Long: ~[%{ː%}:] ] | [ Vow2Short: %{ː%}: ] ] [ :VowNeutral* :Cons* :Cons]/:0* _ ;
+             :Vow/:0* _ ;
+             %>: н %>: _ ;
+             %>: %{i%}: л %>: _ ;
+             %>: р %>: _ ;
+             %>: %{Д%}: _ ;
+
+"Yotised vowel harmony for {ЪЯ} after Cons: ъя is chosen"
+%{ЪЯ%}:ъё <=> [ о | ё ] [ о | ё | :Cons ]*/:0* _ ;
+         except 
+             [ о | ё ] %{ː%}: [ о | ё | :Cons ]*/:0* _ ;
+             :Vow/:0* _ ;
+             %>: н %>: _ ;
+             %>: %{i%}: л %>: _ ;
+             %>: р %>: _ ;
+             %>: %{Д%}: _ ;
+
