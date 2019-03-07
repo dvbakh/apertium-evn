@@ -1,38 +1,3 @@
-test -z "evn.automorf.hfst evn.autogen.hfst evn.automorf.bin evn.autopgen.bin evn.automorf.att.gz evn.autogen.att.gz evn.rlx.bin" || rm -f evn.automorf.hfst evn.autogen.hfst evn.automorf.bin evn.autopgen.bin evn.automorf.att.gz evn.autogen.att.gz evn.rlx.bin
-rm -rf .deps modes
-test -d .deps || mkdir .deps
-touch .deps/.d
-cat apertium-evn.evn.lexc | grep -v 'Dir/RL' > .deps/evn.LR.lexc
-hfst-lexc .deps/evn.LR.lexc -o .deps/evn.LR.lexc.hfst -v
-Reading from .deps/evn.LR.lexc, writing to .deps/evn.LR.lexc.hfst
-Parsing lexc file .deps/evn.LR.lexc
-Compiling... 
-Writing... done
-hfst-twolc apertium-evn.evn.twol -o .deps/evn.twol.hfst
-hfst-compose-intersect -1 .deps/evn.LR.lexc.hfst -2 .deps/evn.twol.hfst -o .deps/evn.LR.hfst
-hfst-twolc dev/spellrelax.twol -o .deps/spellrelax.hfst
-hfst-compose-intersect -1 .deps/evn.LR.hfst -2 .deps/spellrelax.hfst | hfst-invert | hfst-fst2fst -O -o evn.automorf.hfst
-cat apertium-evn.evn.lexc | grep -v 'Dir/LR' > .deps/evn.RL.lexc
-hfst-lexc .deps/evn.RL.lexc -o .deps/evn.RL.lexc.hfst -v
-Reading from .deps/evn.RL.lexc, writing to .deps/evn.RL.lexc.hfst
-Parsing lexc file .deps/evn.RL.lexc
-Compiling... 
-Writing... done
-hfst-compose-intersect -1 .deps/evn.RL.lexc.hfst -2 .deps/evn.twol.hfst -o .deps/evn.RL.hfst
-hfst-fst2fst -O .deps/evn.RL.hfst -o evn.autogen.hfst
-hfst-fst2txt evn.automorf.hfst | gzip -9 -c -n > evn.automorf.att.gz
-zcat < evn.automorf.att.gz > .deps/evn.automorf.att
-lt-comp lr .deps/evn.automorf.att evn.automorf.bin
-main@standard 14695 34498
-final@inconditional 2 1
-lt-comp lr apertium-evn.post-evn.dix evn.autopgen.bin
-main@standard 5 8
-hfst-fst2txt evn.autogen.hfst | gzip -9 -c -n > evn.autogen.att.gz
-/usr/bin/cg-comp apertium-evn.evn.rlx evn.rlx.bin
-apertium-validate-modes modes.xml
-apertium-gen-modes modes.xml
-modes=`xmllint --xpath '//mode[@install="yes"]/@name' modes.xml | sed 's/ *name="\([^"]*\)"/\1.mode /g'`; \
-	if test -n "$modes"; then mv $modes modes/; fi
 ['adj.tsv', 'nouns.tsv', 'pron.tsv', 'test_vowel_harmony.tsv', 'verbs.tsv']
 adj.tsv:
 Generation:
