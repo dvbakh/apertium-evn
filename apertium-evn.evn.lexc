@@ -186,10 +186,11 @@ LEXICON Root
 Nouns ;
 Numerals ; 
 Pronouns ;
-Postpositions ;
+!Postpositions ;
 Adjectives ;
 Adverbs ;
 Verbs ;
+Punctuation ;
 !Guesser ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -214,13 +215,13 @@ LEXICON NUM
 %<num%>%<coll2%>:%>ӈн%{A%} CLITICS ; ! обозначает совокупность животных
 %<num%>%<coll3%>:%>р%{A%}гд%{A%} CLITICS ; ! обозначает совокупность предметов
 
-LEXICON POST
-
-%<post%>: # ;
-
-LEXICON CONJ
-
-%<conj%>: CLITICS ;
+!LEXICON POST
+!
+!%<post%>: # ;
+!
+!LEXICON CONJ
+!
+!%<conj%>: CLITICS ;
 
 LEXICON ADV
 
@@ -11421,3 +11422,43 @@ hигин:hиги N-ASATKAN ;
 городу:городу ADV ; ! "давно (также далеко)"
 туги:туги ADV ; ! "так" add to prn?
 он:он ADV ; ! "как" add to prn?
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON DIGITLEX
+
+%<num%>: # ; 
+
+LEXICON Punctuation
+
+.%<sent%>:. # ;
+..%<sent%>:.. # ;
+...%<sent%>:... # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%¡%<sent%>:%¡ # ; 
+%-%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+%–%<guio%>:%– # ;
+,%<cm%>:, # ;
+%?%<sent%>:%? # ; 
+%¿%<lquest%>:%¿ # ; 
+%"%<sent%>:%" # ;
+%«%<lquot%>:%« # ;
+%»%<rquot%>:%» # ;
+%”%<rquot%>:%” # ;
+%“%<lquot%>:%“ # ;
+%(%<lpar%>:%( # ;
+（%<lpar%>:（ # ;
+%]%<rpar%>:%] # ;
+%[%<lpar%>:%[ # ;
+%)%<rpar%>:%) # ;
+）%<rpar%>:） # ;
+\%<sent%>:\ # ;
+/%<sent%>:/ # ;
+…%<sent%>:… # ;
+
+< [ %0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 ]+ > DIGITLEX ; 
+
