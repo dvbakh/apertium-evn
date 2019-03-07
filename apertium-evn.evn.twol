@@ -58,11 +58,11 @@ VoicelessCns = к с т п ;
 Rules 
 
 "Remove suffix vowel {i} with vowel-ending stem"
-%{i%}:0 <=>  :Vow (%{ː%}:) %>: _ ;
+%{i%}:0 <=>  :Vow (:0) %>: _ ;
              %>: ӈ _ %>: Cons+ Vow+ ;
 
 "Remove suffix vowel {y} with vowel-ending stem"
-%{y%}:0 <=>  :Vow (%{ː%}:) %>: _ ;
+%{y%}:0 <=>  :Vow (:0) %>: _ ;
 
 "{y} turns into ы before т or д"
 %{y%}:ы <=>  т | д %>: _ ;
