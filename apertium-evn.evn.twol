@@ -218,20 +218,20 @@ Rules
 !@ о р о >:0 н >:0 {V}:м {A}:о
 
 "Non-yotised vowel harmony for {Я}: a is chosen"
-%{Я%}:а <=>  [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]* %>: н %>: {ъ}:0 _ ;
-             [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]* %>: %{i%}: л %>: {ъ}:0 _ ;
-             [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]* %>: р %>: {ъ}:0 _ ;
+%{Я%}:а <=>  [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]* %>: н %>: %{ъ%}:0 _ ;
+             [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]* %>: %{i%}: л %>: %{ъ%}:0 _ ;
+             [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]* %>: р %>: %{ъ%}:0 _ ;
              [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]* %>: %{Д%}:ч _ ;
-             [ :о | :ё ] [ : ]* [ :Vow - [ :о | :ё ] ] [ : ]* [ {ъ}:0 | %{Д%}:ч ] _ ;
+             [ :о | :ё ] [ : ]* [ :Vow - [ :о | :ё ] ] [ : ]* [ %{ъ%}:0 | %{Д%}:ч ] _ ;
 
 !# мо{ː}>{i}л>{ъ}{Я}
 !# мо̄00л00а	
 !@ м о {ː}:̄ >:0 {i}:0 л >:0 {ъ}:0 {Я}:а
 
 "Non-yotised vowel harmony for {Я}: э is chosen"
-%{Я%}:э <=>  [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]* %>: н %>: {ъ}:0 _ ;
-             [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]* %>: %{i%}: л %>: {ъ}:0 _ ;
-             [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]* %>: р %>: {ъ}:0 _ ;
+%{Я%}:э <=>  [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]* %>: н %>: %{ъ%}:0 _ ;
+             [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]* %>: %{i%}: л %>: %{ъ%}:0 _ ;
+             [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]* %>: р %>: %{ъ%}:0 _ ;
              [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]* %>: %{Д%}:ч _ ;
 
 !# хулуку{э}>н>{ъ}{Я}
@@ -243,9 +243,9 @@ Rules
 !@ э е {ː}:̄ {э}:0 т >:0 {Д}:ч {Я}:э >:0 м
 
 "Non-yotised vowel harmony for {Я}: о is chosen"
-%{Я%}:о <=>  [ :о | :ё ] :Cons* %>: н %>: {ъ}:0 _ ;
-             [ :о | :ё ] :Cons* %>: %{i%}: л %>: {ъ}:0 _ ;
-             [ :о | :ё ] :Cons* %>: р %>: {ъ}:0 _ ;
+%{Я%}:о <=>  [ :о | :ё ] :Cons* %>: н %>: %{ъ%}:0 _ ;
+             [ :о | :ё ] :Cons* %>: %{i%}: л %>: %{ъ%}:0 _ ;
+             [ :о | :ё ] :Cons* %>: р %>: %{ъ%}:0 _ ;
              [ :о | :ё ] :Cons* %>: %{Д%}:ч _ ;
 
 !# орон>{Я}>{i}в
@@ -253,9 +253,9 @@ Rules
 !@ о р о н >:0 {Я}:о >:0 {i}:0 в
 
 "Yotised vowel harmony for {Я}: я is chosen"
-%{Я%}:я <=>  [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]*/[ %>: ] _ ;
+%{Я%}:я <=>  [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]*/[ %>: ] ( %{ъ%}:ъ ) _ ;
          except 
-             {ъ}:0 _ ;
+             %{ъ%}:0 _ ;
              %>: %{Д%}:ч _ ;
 
 !# гара>{Я}	
@@ -267,9 +267,9 @@ Rules
 !@ б а к а >:0 {Д}:д {Я}:я >:0 м
 
 "Yotised vowel harmony for {Я}: е is chosen"
-%{Я%}:е <=>  [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]*/[ %>: ] _ ;
+%{Я%}:е <=>  [ %{э%}: | Vow2Long: %{ː%}: | Vow2Short: ] [ :VowNeutral | :Cons ]*/[ %>: ] ( %{ъ%}:ъ ) _ ;
         except
-             {ъ}:0 _ ;
+             %{ъ%}:0 _ ;
              %>: %{Д%}:ч _ ;
 
 !# илэ>{Я}	
@@ -281,9 +281,9 @@ Rules
 !@ с у р у {э}:0 >:0 {Д}:д {Я}:е >:0 м
 
 "Yotised vowel harmony for {Я}: ё is chosen"
-%{Я%}:ё <=>  [ :о | :ё ] :Cons*/[ %>: ] _ ;
+%{Я%}:ё <=>  [ :о | :ё ] :Cons*/[ %>: ] ( %{ъ%}:ъ ) _ ;
          except
-             {ъ}:0 _ ;
+             %{ъ%}:0 _ ;
              %>: %{Д%}:ч _ ;
 
 !# голо>{Я}
