@@ -23,7 +23,9 @@ Alphabet
  %{ъ%}:0 %{ъ%}:ъ
 
  %{а%}:0 %{э%}:0 %{ч%}:0 %{ь%}:0 %{☭%}:0
- %>:0  ;
+ %>:0  
+ %-
+;
 
 Sets
 
@@ -113,6 +115,8 @@ Rules
 "Voicing assimilation of {D}"
 %{D%}:т <=> :VoicelessCns :0* ( %- ) _ ;
 
+!@ т а р >:0 - {D}:д {A}:а {ː}:
+
 !# дэт>{D}{u}ли	
 !# дэт0тули
 !@ д э т >:0 {D}:т {u}:у л и	
@@ -145,7 +149,7 @@ Rules
 !@ э е {ː}:̄ {э}:0 т >:0 {Д}:ч {Я}:э >:0 м
 
 "{D}:д after Nasal in <comp> and <sup> suffixes"
-%{D%}:д <=> :Nasal %>: _ %{ы%}: ;
+%{D%}:д <= :Nasal %>: (%-) _ %{ы%}: ;
 
 "ы appears after {D}:д in <comp> and <sup> suffixes"
 %{ы%}:ы <=> %{D%}:д _ ; 
@@ -189,8 +193,10 @@ Rules
 %{N%}:т <=> _ %>: [ т | ч ] ; 
 
 "Vowel harmony for {A}: a is chosen"
-%{A%}:а <=> [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]*/:0 (%-) _ ;
-            [ :о | :ё ] [ : ]* [ :Vow - [ :о | :ё ] ] [ : ]* _ ;
+%{A%}:а <=> [ %{а%}: | Vow1Long: %{ː%}: | Vow1Short: ] [ :VowNeutral | :Cons ]*/:0 (%-) [ :VowNeutral | :Cons ]*/:0 _ ;
+                                               [ :о | :ё ] ?* [ :Vow - [ :о | :ё ] ] ?* _ ;
+
+!@ т а р >:0 - {D}:д {A}:а
 
 !# гара>{V}{A}
 !# гара0ва

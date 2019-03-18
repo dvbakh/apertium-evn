@@ -12,9 +12,23 @@ Alphabet
       ̄:̄
       ̄:0
    с:с
-   с:һ;
+   с:һ
+   у:ӯ
+
+;
 
 Rules
 
 "Apply rules"
 a => _ ;
+
+
+! Here we should list all of the vowel letters that have a precomposed 
+! form in Unicode.
+
+"Lengthened vowels"
+Vx:Vy => _  : ; 
+   where Vx in (  и  у  )
+         Vy in (  ӣ  ӯ  )
+   matched ;
+
