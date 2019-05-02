@@ -115,7 +115,7 @@ Rules
 !@ о р о >:0 р >:0 {L}:р у н
 
 "Consonant assimilation in suffixes"
-%{G%}:Cy <=> Cx :0* _ ;
+%{G%}:Cy <=> Cx :0* %>:  _ ;
        where Cx in ( к с т п м н ӈ ) 
              Cy in ( к к к к ӈ ӈ ӈ ) 
        matched ; 

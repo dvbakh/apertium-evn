@@ -14,7 +14,7 @@ $(LANG1).seg.hfst: ../../$(LANG1).automorf.hfst $(LANG1)-seg.hfst
 	hfst-invert ../../.deps/$(LANG1).LR.hfst | hfst-compose-intersect -1 - -2 $(LANG1)-seg.hfst | hfst-minimise -o $@
 
 $(LANG1).segmenter.hfst: $(LANG1).seg.hfst
-	hfst-fst2fst -w $(LANG1).seg.hfst -o $@
+	hfst-minimise $(LANG1).seg.hfst | hfst-fst2fst -w -o $@
 
 clean:
 	rm *.hfst
