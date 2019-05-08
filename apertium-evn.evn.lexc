@@ -1510,7 +1510,7 @@ NON-FINITE ;
 %<impf%>:%>%{D%}%{Я%} V ;
 %<impf%>:%>%{D%}%{Е%} V ; ! Dir/LR
 %<impf%>:%>%{D%}и V ; ! Dir/LR
-%<impf%>:%>%{D%}%{А%} V ; ! Dir/LR
+%<impf%>:%>%{D%}%{A%} V ; ! Dir/LR
 %<impf%>:%>%{D%}%{Я%} V ; ! Dir/LR
 %<impf%>:%>%{D%}%{Е%} V ; ! Dir/LR ! Dir/LR
 %<hab%>:%>%{i%}ӈн%{A%}%{ː%} V ;
@@ -1600,7 +1600,7 @@ NFUT-IRREG ;
 %<impf%>:%>%{D%}%{ь%}%{Я%} V ;
 %<impf%>:%>%{D%}%{ь%}%{Е%} V ; ! Dir/LR
 %<impf%>:%>%{D%}и V ; ! Dir/LR
-%<impf%>:%>%{D%}%{А%} V ; ! Dir/LR
+%<impf%>:%>%{D%}%{A%} V ; ! Dir/LR
 %<hab%>:%>%{i%}ӈн%{A%}%{ː%} V ;
 %<hab%>:%>%{i%}ӈн%{Э%}%{ː%} V ; ! Dir/LR
 %<dur%>:%{i%}т%{ч%} V ;
