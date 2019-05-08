@@ -27,7 +27,7 @@ $(LANG1).inv_seg.hfst: ../../.deps/$(LANG1).LR.hfst
 
 # Optimised lookup version
 $(LANG1).segmenter.hfst: $(LANG1).seg.hfst
-	hfst-minimise $(LANG1).seg.hfst | hfst-fst2fst -w -o $@
+	hfst-minimise $(LANG1).seg.hfst | hfst-fst2fst -O -o $@
 
 clean:
 	rm *.hfst
