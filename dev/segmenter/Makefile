@@ -18,12 +18,14 @@ $(LANG1)-seg.hfst: ../../.deps/$(LANG1).LR.lexc.hfst $(LANG1)-seg.twol.hfst
 # OUT: Surface form:Segmented surface form
 # бурьямӣрка̄м:бурья мӣ р ко̄ м
 $(LANG1).seg.hfst: $(LANG1).inv_seg.hfst $(LANG1)-seg.hfst
+$(LANG1).seg.hfst: ../../.deps/$(LANG1).LR.hfst $(LANG1)-seg.hfst
 	hfst-compose-intersect -1 $(LANG1).inv_seg.hfst -2 $(LANG1)-seg.hfst -o $@
 
 # OUT: Surface form:analysis
 # йэгиндяррпчукакӯндук:йэгиндяр<adv><attr5><pchu><ints1><sg><abl>
 $(LANG1).inv_seg.hfst: ../../.deps/$(LANG1).LR.hfst 
-	hfst-compose-intersect -1 ../../.deps/$(LANG1).LR.hfst -2 ../../.deps/spellrelax.hfst | hfst-invert -o $@ 
+#	hfst-compose-intersect -1 ../../.deps/$(LANG1).LR.hfst -2 ../../.deps/spellrelax.hfst | hfst-invert -o $@ 
+	hfst-invert ../../.deps/$(LANG1).LR.hfst -o hfst-invert -o $@ 
 
 # Optimised lookup version
 $(LANG1).segmenter.hfst: $(LANG1).seg.hfst
