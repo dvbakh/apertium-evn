@@ -338,7 +338,9 @@
 ! Archiphonemes and escaped symbols
 %{i%}                 ! -и -ы -ø
 %{A%}                 ! -а -э -о
+%{Э%}                 ! -а -э -о allows all
 %{Я%}                 ! -а -э -о -я -е -ё
+%{Е%}                 ! -а -э -о -я -е -ё allows all
 %{L%}                 ! -л -р
 %{D%}                 ! -д -т
 %{V%}                 ! -в -м
@@ -352,6 +354,9 @@
 %{ъ%}                 ! -ъ -ø
 %{ы%}                 ! -ы -ø
 
+%{Ч%}                 ! -ч -с -ш -щ ! Dir/LR
+%{О%}                 ! -о -ё -э ! Dir/LR
+%{Б%}                 ! -б -п -к ! Dir/LR
 %{n%}                 ! remove previous n
  
 %{а%}                 ! for Vow1 vowel harmony (suffixes with -а -я are chosen)
@@ -392,52 +397,52 @@ Punctuation ;
 LEXICON CLITICS
 
 # ;
-%<clit-da%>:%>%-%{D%}%{A%}%{ː%} CLITICS ; ! ""
-%<clit-da%>:%>%{D%}%{A%}%{ː%} CLITICS ; ! ! Dir/LR
-%<clit-val%>:%>%-%{V%}%{A%}л CLITICS ; ! 'any'
-%<clit-val%>:%>%{V%}%{A%}л CLITICS ; ! Dir/LR
-%<clit-valin%>:%>%-%{V%}%{A%}лин CLITICS ;
-%<clit-valin%>:%>%{V%}%{A%}лин CLITICS ; ! Dir/LR
-%<clit-sa%>:%>%-с%{A%} CLITICS ;
-%<clit-sa%>:%>с%{A%} CLITICS ; ! Dir/LR
-%<clit-ngna%>:%>%-ӈн%{A%} CLITICS ;
-%<clit-ngna%>:%>ӈн%{A%} CLITICS ; ! Dir/LR
-%<clit-ngan%>:%>%-ӈ%{A%}н CLITICS ;
-%<clit-ngan%>:%>ӈ%{A%}н CLITICS ; ! Dir/LR
-%<clit-kan%>:%>%-к%{A%}н CLITICS ;
-%<clit-kan%>:%>к%{A%}н CLITICS ; ! Dir/LR
-%<clit-kanan%>:%>%-к%{A%}н%{A%}н CLITICS ;
-%<clit-kanan%>:%>к%{A%}н%{A%}н CLITICS ; ! Dir/LR
-%<clit-mak%>:%>%-м%{A%}к CLITICS ;
-%<clit-mak%>:%>м%{A%}к CLITICS ; ! Dir/LR
-%<clit-var%>:%>%-%{V%}%{A%}р CLITICS ; ! пар кар
-%<clit-var%>:%>%{V%}%{A%}р CLITICS ; ! пар кар ! Dir/LR
-%<clit-ka%>:%>%-к%{A%} CLITICS ;
-%<clit-ka%>:%>к%{A%} CLITICS ; ! Dir/LR
-%<clit-ta%>:%>%-т%{A%} CLITICS ;
-%<clit-ta%>:%>т%{A%} CLITICS ; ! Dir/LR
+%<clit-da%>:%>%-%{D%}%{Э%}%{ː%} CLITICS ; ! ""
+%<clit-da%>:%>%{D%}%{Э%}%{ː%} CLITICS ; ! ! Dir/LR
+%<clit-val%>:%>%-%{V%}%{Э%}л CLITICS ; ! 'any'
+%<clit-val%>:%>%{V%}%{Э%}л CLITICS ; ! Dir/LR
+%<clit-valin%>:%>%-%{V%}%{Э%}лин CLITICS ;
+%<clit-valin%>:%>%{V%}%{Э%}лин CLITICS ; ! Dir/LR
+%<clit-sa%>:%>%-с%{Э%} CLITICS ;
+%<clit-sa%>:%>с%{Э%} CLITICS ; ! Dir/LR
+%<clit-ngna%>:%>%-ӈн%{Э%} CLITICS ;
+%<clit-ngna%>:%>ӈн%{Э%} CLITICS ; ! Dir/LR
+%<clit-ngan%>:%>%-ӈ%{Э%}н CLITICS ;
+%<clit-ngan%>:%>ӈ%{Э%}н CLITICS ; ! Dir/LR
+%<clit-kan%>:%>%-к%{Э%}н CLITICS ;
+%<clit-kan%>:%>к%{Э%}н CLITICS ; ! Dir/LR
+%<clit-kanan%>:%>%-к%{Э%}н%{Э%}н CLITICS ;
+%<clit-kanan%>:%>к%{Э%}н%{Э%}н CLITICS ; ! Dir/LR
+%<clit-mak%>:%>%-м%{Э%}к CLITICS ;
+%<clit-mak%>:%>м%{Э%}к CLITICS ; ! Dir/LR
+%<clit-var%>:%>%-%{V%}%{Э%}р CLITICS ; ! пар кар
+%<clit-var%>:%>%{V%}%{Э%}р CLITICS ; ! пар кар ! Dir/LR
+%<clit-ka%>:%>%-к%{Э%} CLITICS ;
+%<clit-ka%>:%>к%{Э%} CLITICS ; ! Dir/LR
+%<clit-ta%>:%>%-т%{Э%} CLITICS ;
+%<clit-ta%>:%>т%{Э%} CLITICS ; ! Dir/LR
 %<clit-kun%>:%>%-кун CLITICS ;
 %<clit-kun%>:%>кун CLITICS ; ! Dir/LR
-%<clit-mat%>:%>%-м%{A%}т CLITICS ;
-%<clit-mat%>:%>м%{A%}т CLITICS ; ! Dir/LR
+%<clit-mat%>:%>%-м%{Э%}т CLITICS ;
+%<clit-mat%>:%>м%{Э%}т CLITICS ; ! Dir/LR
 %<clit-nun%>:%>%-нун CLITICS ;
 %<clit-nun%>:%>нун CLITICS ; ! Dir/LR
-%<clit-luvar%>:%>%-лув%{A%}р CLITICS ;
-%<clit-luvar%>:%>лув%{A%}р CLITICS ; ! Dir/LR
-%<clit-vasi%>:%>%-в%{A%}си CLITICS ;
-%<clit-vasi%>:%>в%{A%}си CLITICS ; ! Dir/LR
-%<clit-vasin%>:%>%-в%{A%}син CLITICS ;
-%<clit-vasin%>:%>в%{A%}син CLITICS ; ! Dir/LR
+%<clit-luvar%>:%>%-лув%{Э%}р CLITICS ;
+%<clit-luvar%>:%>лув%{Э%}р CLITICS ; ! Dir/LR
+%<clit-vasi%>:%>%-в%{Э%}си CLITICS ;
+%<clit-vasi%>:%>в%{Э%}си CLITICS ; ! Dir/LR
+%<clit-vasin%>:%>%-в%{Э%}син CLITICS ;
+%<clit-vasin%>:%>в%{Э%}син CLITICS ; ! Dir/LR
 %<clit-puna%>:%>%-пуня CLITICS ;
 %<clit-puna%>:%>пуня CLITICS ; ! Dir/LR
-%<clit-dak%>:%>%-д%{A%}к CLITICS ;
-%<clit-dak%>:%>д%{A%}к CLITICS ; ! Dir/LR
-%<clit-na%>:%>%-н%{A%} CLITICS ;
-%<clit-na%>:%>н%{A%} CLITICS ; ! Dir/LR
+%<clit-dak%>:%>%-д%{Э%}к CLITICS ;
+%<clit-dak%>:%>д%{Э%}к CLITICS ; ! Dir/LR
+%<clit-na%>:%>%-н%{Э%} CLITICS ;
+%<clit-na%>:%>н%{Э%} CLITICS ; ! Dir/LR
 %<clit-gu%>:%>%-%{G%}у CLITICS ;
 %<clit-gu%>:%>%{G%}у CLITICS ; ! Dir/LR
-%<clit-sinča%>:%>%-синч%{A%} CLITICS ; ! or not clit?
-%<clit-sinča%>:%>синч%{A%} CLITICS ; ! or not clit? ! Dir/LR
+%<clit-sinča%>:%>%-синч%{Э%} CLITICS ; ! or not clit?
+%<clit-sinča%>:%>синч%{Э%} CLITICS ; ! or not clit? ! Dir/LR
 
 LEXICON NUM 
 
@@ -445,12 +450,12 @@ LEXICON NUM
 %<num%>%<nmlz%>: NOMINAL-INFL ;
 %<num%>%<ord%>:%>%{g%}и CLITICS ; ! add exceptions
 %<num%>%<coll1%>:%>ни CLITICS ; ! обозначает совокупность лиц
-%<num%>%<coll2%>:%>ӈн%{A%} CLITICS ; ! обозначает совокупность животных
-%<num%>%<coll3%>:%>р%{A%}гд%{A%} CLITICS ; ! обозначает совокупность предметов
-%<num%>%<coll4%>:%>лл%{A%} N ; ! обозначает количество суток
+%<num%>%<coll2%>:%>ӈн%{Э%} CLITICS ; ! обозначает совокупность животных
+%<num%>%<coll3%>:%>р%{Э%}гд%{Э%} CLITICS ; ! обозначает совокупность предметов
+%<num%>%<coll4%>:%>лл%{Э%} N ; ! обозначает количество суток
 %<num%>%<coll5%>:%>нну N ; ! пу обозначает количество юрт, стоящих вместе ! Fixme
-%<num%>%<coll6%>:%>мус%{A%} N ; ! обозначает количество мест, направлений
-%<num%>%<coll7%>:%>нм%{A%}%{ː%} N-N ; ! обозначает количество мест, направлений
+%<num%>%<coll6%>:%>мус%{Э%} N ; ! обозначает количество мест, направлений
+%<num%>%<coll7%>:%>нм%{Э%}%{ː%} N-N ; ! обозначает количество мест, направлений
 
 
 LEXICON NUM-N
@@ -459,11 +464,11 @@ LEXICON NUM-N
 %<num%>%<nmlz%>: NOMINAL-INFL-N ;
 %<num%>%<ord%>:%>%{g%}и CLITICS ; ! add exceptions
 %<num%>%<coll1%>:%>ни CLITICS ; ! обозначает совокупность лиц
-%<num%>%<coll2%>:%>ӈн%{A%} CLITICS ; ! обозначает совокупность животных
-%<num%>%<coll3%>:%>р%{A%}гд%{A%} CLITICS ; ! обозначает совокупность предметов
-%<num%>%<coll4%>:%>лл%{A%} N ; ! обозначает количество суток
+%<num%>%<coll2%>:%>ӈн%{Э%} CLITICS ; ! обозначает совокупность животных
+%<num%>%<coll3%>:%>р%{Э%}гд%{Э%} CLITICS ; ! обозначает совокупность предметов
+%<num%>%<coll4%>:%>лл%{Э%} N ; ! обозначает количество суток
 %<num%>%<coll5%>:%>нну N ; ! пу обозначает количество юрт, стоящих вместе
-%<num%>%<coll6%>:%>нмус%{A%} N-N ; ! обозначает количество мест, направлений
+%<num%>%<coll6%>:%>нмус%{Э%} N-N ; ! обозначает количество мест, направлений
 
 %<vblz%>:%>в%{u%} VERB ; ! to the ordinal numerals from 'second' to 'ninth'
 
@@ -480,13 +485,13 @@ LEXICON ADV
 
 CLITICS ;
 
-%<ints1%>:%>к%{A%}ку%{ː%}н CLITICS ;
-%<ints2%>:%>м%{A%}м%{A%} CLITICS ;
-%<ints2%>:%>м%{A%} CLITICS ; ! Dir/LR
-%<ints3%>:%>т%{A%}н%{A%} CLITICS ;
+%<ints1%>:%>к%{Э%}ку%{ː%}н CLITICS ;
+%<ints2%>:%>м%{Э%}м%{Э%} CLITICS ;
+%<ints2%>:%>м%{Э%} CLITICS ; ! Dir/LR
+%<ints3%>:%>т%{Э%}н%{Э%} CLITICS ;
 
-%<atten1%>:%>к%{A%}%{ː%} CLITICS ;
-%<atten1%>:%>к%{A%}%{ː%}к%{A%}%{ː%} CLITICS ; ! Dir/LR
+%<atten1%>:%>к%{Э%}%{ː%} CLITICS ;
+%<atten1%>:%>к%{Э%}%{ː%}к%{Э%}%{ː%} CLITICS ; ! Dir/LR
 
 LEXICON ADV-DERIV
 
@@ -524,6 +529,7 @@ LEXICON POSS-SG-PX
 %<px1pi%>:%>%{i%}т CLITICS ; 
 %<px2pl%>:%>%{i%}сун CLITICS ; 
 %<px3pl%>:%>%{i%}тын CLITICS ;
+%<px3pl%>:%>%{i%}тин CLITICS ; ! Dir/LR
 
 LEXICON POSS-SG-WITHOUT-REF
 
@@ -533,7 +539,12 @@ POSS-SG-PX ;
 LEXICON POSS-REF
 
 %<ref-sg%>:%>%{V%}и%{ː%} CLITICS ;
-%<ref-pl%>:%>%{V%}%{A%}р CLITICS ;
+%<ref-sg%>:%>%{Б%}и%{ː%} CLITICS ; ! Dir/LR
+%<ref-sg%>:%>и CLITICS ; ! Dir/LR
+%<ref-sg%>:%>йи CLITICS ; ! Dir/LR
+%<ref-pl%>:%>%{V%}%{Э%}р CLITICS ;
+%<ref-pl%>:%>%{V%}%{Э%}л CLITICS ; ! Dir/LR
+%<ref-pl%>:%>%{Б%}%{Э%}л CLITICS ; ! Dir/LR
 
 LEXICON POSS-SG-REF
 
@@ -550,12 +561,14 @@ LEXICON POSS-SG-N-REF
 POSS-REF ;
 
 %<px1sg%>:%>ми%{ː%} CLITICS ;
+%<px1sg%>:%{n%}%>м CLITICS ; ! Dir/LR
 %<px2sg%>:%>ни CLITICS ;
 %<px3sg%>:%>ин CLITICS ; 
 %<px1pe%>:%>мун CLITICS ;
 %<px1pi%>:%>ты CLITICS ; 
 %<px2pl%>:%>нун CLITICS ;
 %<px3pl%>:%>тын CLITICS ;
+%<px3pl%>:%>%{i%}тин CLITICS ; ! Dir/LR
 
 LEXICON POSS-SG-N-CLITICS
 
@@ -567,12 +580,17 @@ LEXICON POSS-PL
 POSS-REF ;
 
 %<px1sg%>:%>ви%{ː%} CLITICS ; 
+%<px1sg%>:%>би%{ː%} CLITICS ; ! Dir/LR
 %<px2sg%>:%>%{L%}и CLITICS ; 
 %<px3sg%>:%>ин CLITICS ; 
 %<px1pe%>:%>вун CLITICS ; 
+%<px1pe%>:%>бун CLITICS ; ! Dir/LR
 %<px1pi%>:%>ты CLITICS ; 
+%<px1pi%>:%>ип CLITICS ; ! Dir/LR
+%<px1pi%>:%>пи CLITICS ; ! Dir/LR
 %<px2pl%>:%>%{L%}ун CLITICS ; 
 %<px3pl%>:%>тын CLITICS ; 
+%<px3pl%>:%>%{i%}тин CLITICS ; ! Dir/LR
 
 LEXICON POSS-PL-CLITICS
 
@@ -581,55 +599,58 @@ POSS-PL ;
 
 LEXICON CASE-OBL
 
-%<acc%>%<def%>:%>%{V%}%{A%} CLITICS ;
-%<acc%>%<ind%>:%>%{ъ%}%{Я%} CLITICS ;
+%<acc%>%<def%>:%>%{V%}%{Э%} CLITICS ;
+%<acc%>%<def%>:%>%{Б%}%{Э%} CLITICS ; ! Dir/LR
+%<acc%>%<ind%>:%>%{ъ%}%{Е%} CLITICS ;
 %<datloc%>:%>%{D%}у%{ː%} CLITICS ;
-%<locall%>:%>%{D%}%{u%}л%{A%}%{ː%} CLITICS ;
+%<locall%>:%>%{D%}%{u%}л%{Э%}%{ː%} CLITICS ;
 %<all%>:%>т%{i%}ки%{ː%} CLITICS ;
 %<prl%>:%>%{D%}%{u%}ли%{ː%} CLITICS ;
-%<locdir%>:%>%{i%}кл%{A%}%{ː%} CLITICS ;
+%<locdir%>:%>%{i%}кл%{Э%}%{ː%} CLITICS ;
 %<allprl%>:%>%{i%}кли%{ː%} CLITICS ;
 %<abl%>:%>%{D%}ук CLITICS ;
 %<ela%>:%>%{G%}ит%{д%} CLITICS ;
 %<com-nun%>:%>нун CLITICS ;
-%<com-nan%>:%>н%{A%}н CLITICS ;
-%<com-gali%>:%>%{G%}%{A%}ли CLITICS ;
+%<com-nan%>:%>н%{Э%}н CLITICS ;
+%<com-gali%>:%>%{G%}%{Э%}ли CLITICS ;
 
 LEXICON CASE-OBL-OBLIGATORY-POSS
 
-%<acc%>%<def%>:%>%{V%}%{A%} POSS-SG-PX ;
+%<acc%>%<def%>:%>%{V%}%{Э%} POSS-SG-PX ;
+%<acc%>%<def%>:%>%{Б%}%{Э%} POSS-SG-PX ; ! Dir/LR
 %<acc%>%<def%>: POSS-REF ;
-%<acc%>%<ind%>:%>%{ъ%}%{Я%} POSS-SG-REF ;
+%<acc%>%<ind%>:%>%{ъ%}%{Е%} POSS-SG-REF ;
 !%<acc%>%<ind%>: POSS-REF ; ! check
 %<datloc%>:%>%{D%}у%{ː%} POSS-SG-REF ;
-%<locall%>:%>%{D%}%{u%}л%{A%}%{ː%} POSS-SG-REF ;
+%<locall%>:%>%{D%}%{u%}л%{Э%}%{ː%} POSS-SG-REF ;
 %<all%>:%>т%{i%}ки%{ː%} POSS-SG-REF ;
 %<prl%>:%>%{D%}%{u%}ли%{ː%}  POSS-SG-REF ;
-%<locdir%>:%>%{i%}кл%{A%}%{ː%} POSS-SG-REF ;
+%<locdir%>:%>%{i%}кл%{Э%}%{ː%} POSS-SG-REF ;
 %<allprl%>:%>%{i%}кли%{ː%} POSS-SG-REF ;
 %<abl%>:%>%{D%}ук POSS-SG-REF ;
 %<ela%>:%>%{G%}ит%{д%} POSS-SG-REF ;
 %<com-nun%>:%>нун POSS-SG-N-REF ;
-%<com-nan%>:%>н%{A%}н POSS-SG-N-REF ;
-%<com-gali%>:%>%{G%}%{A%}ли POSS-SG-REF ;
+%<com-nan%>:%>н%{Э%}н POSS-SG-N-REF ;
+%<com-gali%>:%>%{G%}%{Э%}ли POSS-SG-REF ;
 
 LEXICON CASE-OBL-POSS
 
-%<acc%>%<def%>:%>%{V%}%{A%} POSS-SG-WITHOUT-REF ;
+%<acc%>%<def%>:%>%{V%}%{Э%} POSS-SG-WITHOUT-REF ;
+%<acc%>%<def%>:%>%{Б%}%{Э%} POSS-SG-WITHOUT-REF ; ! Dir/LR
 %<acc%>%<def%>: POSS-REF ;
-%<acc%>%<ind%>:%>%{ъ%}%{Я%} POSS-SG-CLITICS ;
+%<acc%>%<ind%>:%>%{ъ%}%{Е%} POSS-SG-CLITICS ;
 !%<acc%>%<ind%>: POSS-REF ; ! check
 %<datloc%>:%>%{D%}у%{ː%} POSS-SG-CLITICS ;
-%<locall%>:%>%{D%}%{u%}л%{A%}%{ː%} POSS-SG-CLITICS ;
+%<locall%>:%>%{D%}%{u%}л%{Э%}%{ː%} POSS-SG-CLITICS ;
 %<all%>:%>т%{i%}ки%{ː%} POSS-SG-CLITICS ;
 %<prl%>:%>%{D%}%{u%}ли%{ː%}  POSS-SG-CLITICS ;
-%<locdir%>:%>%{i%}кл%{A%}%{ː%} POSS-SG-CLITICS ;
+%<locdir%>:%>%{i%}кл%{Э%}%{ː%} POSS-SG-CLITICS ;
 %<allprl%>:%>%{i%}кли%{ː%} POSS-SG-CLITICS ;
 %<abl%>:%>%{D%}ук POSS-SG-CLITICS ;
 %<ela%>:%>%{G%}ит%{д%} POSS-SG-CLITICS ;
 %<com-nun%>:%>нун POSS-SG-N-CLITICS ;
-%<com-nan%>:%>н%{A%}н POSS-SG-N-CLITICS ;
-%<com-gali%>:%>%{G%}%{A%}ли POSS-SG-CLITICS ;
+%<com-nan%>:%>н%{Э%}н POSS-SG-N-CLITICS ;
+%<com-gali%>:%>%{G%}%{Э%}ли POSS-SG-CLITICS ;
 
 LEXICON NOMINAL-INFL-OBLIGATORY-POSS
 
@@ -651,9 +672,9 @@ LEXICON NOMINAL-INFL-PL
 %<pl%>%<nom%>:%>%{i%}л POSS-PL-CLITICS ;
 %<pl%>:%>%{i%}л CASE-OBL-POSS ;
 %<pl%>%<ins%>:%>%{i%}л%>ди POSS-SG-CLITICS ;
-%<pl-sal%>%<nom%>:%>с%{A%}л POSS-PL-CLITICS ;
-%<pl-sal%>:%>с%{A%}л CASE-OBL-POSS ;
-%<pl-sal%>%<ins%>:%>с%{A%}л%>ди POSS-SG-CLITICS ;
+%<pl-sal%>%<nom%>:%>с%{Э%}л POSS-PL-CLITICS ;
+%<pl-sal%>:%>с%{Э%}л CASE-OBL-POSS ;
+%<pl-sal%>%<ins%>:%>с%{Э%}л%>ди POSS-SG-CLITICS ;
 
 LEXICON NOMINAL-INFL
 
@@ -684,136 +705,136 @@ LEXICON POSSESSION-EQUATION-ETC
 %<attr-či%>%<pl%>:%>чи%{ː%}%>л CASE-OBL ;
 %<attr-či%>%<pl%>%<ins%>:%>чи%{ː%}%>л%>ит%{д%} CLITICS ;
 
-%<attr-lan%>:%>л%{A%}%{ː%}н CLITICS ;
-%<attr-lan%>:%>л%{A%}%{ː%}н CASE-OBL ;
-%<attr-lan%>%<ins%>:%>л%{A%}%{ː%}н%>ди CLITICS ;
-%<attr-lan%>%<pl%>:%>л%{A%}%{ː%}%>р CLITICS ;
-%<attr-lan%>%<pl%>:%>л%{A%}%{ː%}%>р CASE-OBL ;
-%<attr-lan%>%<pl%>%<ins%>:%>л%{A%}%{ː%}%>р%>ди CLITICS ;
+%<attr-lan%>:%>л%{Э%}%{ː%}н CLITICS ;
+%<attr-lan%>:%>л%{Э%}%{ː%}н CASE-OBL ;
+%<attr-lan%>%<ins%>:%>л%{Э%}%{ː%}н%>ди CLITICS ;
+%<attr-lan%>%<pl%>:%>л%{Э%}%{ː%}%>р CLITICS ;
+%<attr-lan%>%<pl%>:%>л%{Э%}%{ː%}%>р CASE-OBL ;
+%<attr-lan%>%<pl%>%<ins%>:%>л%{Э%}%{ː%}%>р%>ди CLITICS ;
 
-%<lkan%>:%>лк%{A%}%{ː%}н CLITICS ;
-%<lkan%>:%>лк%{A%}%{ː%}н CASE-OBL ;
-%<lkan%>%<ins%>:%>лк%{A%}%{ː%}н%>ди CLITICS ;
-%<lkan%>%<pl%>:%>лк%{A%}%{ː%}%>р CLITICS ;
-%<lkan%>%<pl%>:%>лк%{A%}%{ː%}%>р CASE-OBL ;
-%<lkan%>%<pl%>%<ins%>:%>лк%{A%}%{ː%}%>р%>ди CLITICS ;
+%<lkan%>:%>лк%{Э%}%{ː%}н CLITICS ;
+%<lkan%>:%>лк%{Э%}%{ː%}н CASE-OBL ;
+%<lkan%>%<ins%>:%>лк%{Э%}%{ː%}н%>ди CLITICS ;
+%<lkan%>%<pl%>:%>лк%{Э%}%{ː%}%>р CLITICS ;
+%<lkan%>%<pl%>:%>лк%{Э%}%{ː%}%>р CASE-OBL ;
+%<lkan%>%<pl%>%<ins%>:%>лк%{Э%}%{ː%}%>р%>ди CLITICS ;
 
-%<com-taj%>:%>т%{A%}й CLITICS ;
-%<com-taj%>:%>т%{A%}й CASE-OBL ;
-%<com-taj%>%<ins%>:%>т%{A%}й%>%{i%}т%{д%} CLITICS ;
-%<com-taj%>%<pl%>:%>т%{A%}й%>%{i%}л CLITICS ;
-%<com-taj%>%<pl%>:%>т%{A%}й%>%{i%}л CASE-OBL ;
-%<com-taj%>%<pl%>%<ins%>:%>т%{A%}й%>%{i%}л%>%{i%}т%{д%} CLITICS ;
+%<com-taj%>:%>т%{Э%}й CLITICS ;
+%<com-taj%>:%>т%{Э%}й CASE-OBL ;
+%<com-taj%>%<ins%>:%>т%{Э%}й%>%{i%}т%{д%} CLITICS ;
+%<com-taj%>%<pl%>:%>т%{Э%}й%>%{i%}л CLITICS ;
+%<com-taj%>%<pl%>:%>т%{Э%}й%>%{i%}л CASE-OBL ;
+%<com-taj%>%<pl%>%<ins%>:%>т%{Э%}й%>%{i%}л%>%{i%}т%{д%} CLITICS ;
 
-%<eqt-gačin%>:%{G%}%{A%}чин POSS-SG-N-CLITICS ;
-%<eqt-gačin%>:%{G%}%{A%}чин CASE-OBL-POSS ;
-%<eqt-gačin%>%<ins%>:%{G%}%{A%}чин%>ди POSS-SG-CLITICS ;
-%<eqt-gačin%>%<pl%>:%{G%}%{A%}чи%>р POSS-PL-CLITICS ;
-%<eqt-gačin%>%<pl%>:%{G%}%{A%}чи%>р CASE-OBL-POSS ;
-%<eqt-gačin%>%<pl%>%<ins%>:%{G%}%{A%}чи%>р%>ди POSS-SG-CLITICS ;
+%<eqt-gačin%>:%{G%}%{Э%}чин POSS-SG-N-CLITICS ;
+%<eqt-gačin%>:%{G%}%{Э%}чин CASE-OBL-POSS ;
+%<eqt-gačin%>%<ins%>:%{G%}%{Э%}чин%>ди POSS-SG-CLITICS ;
+%<eqt-gačin%>%<pl%>:%{G%}%{Э%}чи%>р POSS-PL-CLITICS ;
+%<eqt-gačin%>%<pl%>:%{G%}%{Э%}чи%>р CASE-OBL-POSS ;
+%<eqt-gačin%>%<pl%>%<ins%>:%{G%}%{Э%}чи%>р%>ди POSS-SG-CLITICS ;
 
 %<eqt-dyn%>:%{D%}ын CLITICS ;
 %<eqt-dyn%>:%{D%}ын CASE-OBL ;
 %<eqt-dyn%>%<ins%>:%{D%}ын%>ди CLITICS ;
-%<eqt-dyn%>%<pl%>:%{D%}ы%>с%{A%}л CLITICS ;
-%<eqt-dyn%>%<pl%>:%{D%}ы%>с%{A%}л CASE-OBL ;
-%<eqt-dyn%>%<pl%>%<ins%>:%{D%}ы%>с%{A%}л%>%{i%}т%{д%} CLITICS ;
+%<eqt-dyn%>%<pl%>:%{D%}ы%>с%{Э%}л CLITICS ;
+%<eqt-dyn%>%<pl%>:%{D%}ы%>с%{Э%}л CASE-OBL ;
+%<eqt-dyn%>%<pl%>%<ins%>:%{D%}ы%>с%{Э%}л%>%{i%}т%{д%} CLITICS ;
 
-%<advz-lak%>:%>л%{A%}к CLITICS ;
+%<advz-lak%>:%>л%{Э%}к CLITICS ;
 %<advz-t%>:%>т CLITICS ;
 %<advz-ski%>:%>ски CLITICS ;
 %<advz-lta%>:%>лта CLITICS ;
 
 LEXICON INTS-ATTEN
 
-%<atten1%>:%>к%{A%}%{ː%} N-N ;
-%<atten1%>:%>к%{A%}%{ː%}к%{A%}%{ː%} N-N ; ! Dir/LR
+%<atten1%>:%>к%{Э%}%{ː%} N-N ;
+%<atten1%>:%>к%{Э%}%{ː%}к%{Э%}%{ː%} N-N ; ! Dir/LR
 %<atten2%>:%>ми N ;
 %<atten3%>:%>ки%{ː%} N ;
-%<pejor%>:%>ч%{A%}%{ː%} N-N ;
-%<ints1%>:%>к%{A%}%{ː%}ку N-N ;
-%<ints2%>:%>пч%{A%}%{ː%}нэ N ;
-%<ints3%>:%>м%{A%}м%{A%} N ;
-%<ints3%>:%>м%{A%} N ; ! Dir/LR
+%<pejor%>:%>ч%{Э%}%{ː%} N-N ;
+%<ints1%>:%>к%{Э%}%{ː%}ку N-N ;
+%<ints2%>:%>пч%{Э%}%{ː%}нэ N ;
+%<ints3%>:%>м%{Э%}м%{Э%} N ;
+%<ints3%>:%>м%{Э%} N ; ! Dir/LR
 
 LEXICON N-DERIV-ETC
 
 POSSESSION-EQUATION-ETC ;
 INTS-ATTEN ;
 
-%<coll%>:%>%{Я%} N ;
+%<coll%>:%>%{Е%} N ;
 %<box%>:%>рук N ;
-%<pelt%>:%>кс%{A%} N ;
-%<fan%>:%>м%{A%}%{ː%} N-N ;
+%<pelt%>:%>кс%{Э%} N ;
+%<fan%>:%>м%{Э%}%{ː%} N-N ;
 %<place1%>:%>г N ; ! Fixme
-%<place2%>:%>с%{A%} N ; ! Fixme
-%<place3%>:%>с%{A%}%{ː%}г N ; ! Fixme ка%{ː%}г in Boldyrev
-%<bush%>:%>мкур%{A%}%{ː%} N ;
+%<place2%>:%>с%{Э%} N ; ! Fixme
+%<place3%>:%>с%{Э%}%{ː%}г N ; ! Fixme ка%{ː%}г in Boldyrev
+%<bush%>:%>мкур%{Э%}%{ː%} N ;
 %<ptun%>:%>пту N-N ;
-%<geo%>:%>ӈн%{A%} N ;
-%<resident%>:%>г%{A%} N-N ;
-%<fake%>:%>р%{A%} N-N ;
-%<material%>:%>ӈ%{A%}%{ː%}т N ;
+%<geo%>:%>ӈн%{Э%} N ;
+%<resident%>:%>г%{Э%} N-N ;
+%<fake%>:%>р%{Э%} N-N ;
+%<material%>:%>ӈ%{Э%}%{ː%}т N ;
 %<animal%>:%>ты%{ː%} N ;
 %<fag%>:%>мты N ;
-%<man-fan%>:%>м%{A%}ги N-N ;
-%<season%>:%>л%{A%}с%{A%} N ;
-%<deadrel%>:%>ӈ%{A%}с%{A%} N ;
+%<man-fan%>:%>м%{Э%}ги N-N ;
+%<season%>:%>л%{Э%}с%{Э%} N ;
+%<deadrel%>:%>ӈ%{Э%}с%{Э%} N ;
 %<clothes%>:%>сик N ;
-%<plurality%>:%>н%{A%}к N ;
-%<space%>:%>р%{A%}к N ;
+%<plurality%>:%>н%{Э%}к N ;
+%<space%>:%>р%{Э%}к N ;
 %<old%>:%>ми%{ː%} N ;
-%<side%>:%>%{G%}ид%{A%}%{ː%} N ;
-%<side%>:%>%{G%}д%{A%}%{ː%} N ;
-%<accompaniment%>:%>н%{A%} N-N ;
-%<group%>:%>%{Я%} N ;
-%<lim%>:%>рикт%{A%} N ;
+%<side%>:%>%{G%}ид%{Э%}%{ː%} N ;
+%<side%>:%>%{G%}д%{Э%}%{ː%} N ;
+%<accompaniment%>:%>н%{Э%} N-N ;
+%<group%>:%>%{Е%} N ;
+%<lim%>:%>рикт%{Э%} N ;
 %<every%>:%>тыки N-N ;
-%<concession%>:%>м%{A%}%{ː%}т N ;
-%<nearly%>:%>м%{A%}ю N ;
+%<concession%>:%>м%{Э%}%{ː%}т N ;
+%<nearly%>:%>м%{Э%}ю N ;
 %<mni%>:мни%{ː%} N ; ! принадлежность женщины к роду, национальности
 
-%<attr1%>:%>м%{A%} A ; ! a quality denoting material expressed by the base root
+%<attr1%>:%>м%{Э%} A ; ! a quality denoting material expressed by the base root
 %<attr2%>:%>%{D%}ы%{ː%} A ; ! a quality conditioned by the object expressed by the base root
 %<attr-ptɨ%>:%>пты A ; ! temporal quality
 %<attr4%>:%>гу%{ː%} A ; ! locative meaning Fixme
 %<attr5%>:%>ву A ; ! locative meaning Fixme
-%<attr6%>:%>гд%{A%} A ; ! a quality conditioned by an object expressed by the base root
-%<attr7%>:%>р%{A%}гд%{A%} A ; ! quality involving an object expressed by the base root
-%<attr8%>:%>мигд%{A%} A ; ! possessing an object expressed by the base root
-%<attr9%>:%>ктур%{A%} A ; ! possessing an object expressed by the base root
-%<attr10%>:%>рикт%{A%} A ; ! possessing an object expressed by the base root
-%<attr11%>:%>р%{A%} A ; ! possessing a quality conditioned by the object expressed by the base
+%<attr6%>:%>гд%{Э%} A ; ! a quality conditioned by an object expressed by the base root
+%<attr7%>:%>р%{Э%}гд%{Э%} A ; ! quality involving an object expressed by the base root
+%<attr8%>:%>мигд%{Э%} A ; ! possessing an object expressed by the base root
+%<attr9%>:%>ктур%{Э%} A ; ! possessing an object expressed by the base root
+%<attr10%>:%>рикт%{Э%} A ; ! possessing an object expressed by the base root
+%<attr11%>:%>р%{Э%} A ; ! possessing a quality conditioned by the object expressed by the base
 %<attr12%>:%>си A ; ! minlang
 %<attr13%>:%>р A ; ! признак по времени
 
-%<vblz1%>:%>м%{A%}%{ː%} V ; ! hunt
-%<vblz2%>:%>м%{A%} V ; ! go and bring
+%<vblz1%>:%>м%{Э%}%{ː%} V ; ! hunt
+%<vblz2%>:%>м%{Э%} V ; ! go and bring
 %<vblz3%>:%>ми V ; ! hunt
-%<vblz4%>:%>л%{A%}%{ː%} V ; ! go and gather
-%<vblz5%>:%>л%{A%} V ; ! (gather and) bring
+%<vblz4%>:%>л%{Э%}%{ː%} V ; ! go and gather
+%<vblz5%>:%>л%{Э%} V ; ! (gather and) bring
 %<vblz6%>:%>ли%{ː%} V ; ! go and bring
 %<vblz7%>:%>ӈ V ; ! make/build/cook/sew
-%<vblz8%>:%>т%{A%} V ; ! live in /use an object for one's advantage + different meanings
-%<vblz9%>:%>д%{A%} V ; ! perform an action with the object expressed by the root
+%<vblz8%>:%>т%{Э%} V ; ! live in /use an object for one's advantage + different meanings
+%<vblz9%>:%>д%{Э%} V ; ! perform an action with the object expressed by the root
 %<vblz10%>:%>ты%{ː%} V ; ! eat
 %<vblz11%>:%>му V ; ! smell
 %<vblz12%>:%>%{V%}%{u%} V ; ! act with an object expressed by the root
 %<vblz13%>:%>%{i%}л V ; ! different meanings
-%<vblz14%>:%>м%{A%}т V ; ! reciprocal meaning
+%<vblz14%>:%>м%{Э%}т V ; ! reciprocal meaning
 %<vblz15%>:%>лды V ; ! reciprocal meaning
-%<vblz16%>:%>к%{A%}т V ; ! play
-%<vblz17%>:%>г%{A%} V ; ! act with the object expressed by the root
-%<vblz18%>:%>г%{A%} V ; ! act with the object expressed by the root
-%<vblz19%>:%>мк%{A%} V ; ! test
-%<vblz20%>:%>р%{A%} V ; ! perform an action which involves an object expressed by the root
-%<vblz21%>:%>н%{A%} V ; ! perform an action involving an object expressed by the root
+%<vblz16%>:%>к%{Э%}т V ; ! play
+%<vblz17%>:%>г%{Э%} V ; ! act with the object expressed by the root
+%<vblz18%>:%>г%{Э%} V ; ! act with the object expressed by the root
+%<vblz19%>:%>мк%{Э%} V ; ! test
+%<vblz20%>:%>р%{Э%} V ; ! perform an action which involves an object expressed by the root
+%<vblz21%>:%>н%{Э%} V ; ! perform an action involving an object expressed by the root
 
 LEXICON NOUN
 
 %<n%>: N ;
 %<n%>: N-DERIV-ETC ;
-%<n%>%<child%>:%>тк%{A%}%{ː%} N-N ;
+%<n%>%<child%>:%>тк%{Э%}%{ː%} N-N ;
 !%<n%>%<child%>:%>т N ; ! Dir/LR
 !%<n%>%<child%>:%>т N ; ! Dir/LR
 
@@ -821,7 +842,7 @@ LEXICON NOUN-SG
 
 %<n%>: N-SG ;
 %<n%>: N-DERIV-ETC ;
-%<n%>%<child%>:%>тк%{A%}%{ː%} N-N ;
+%<n%>%<child%>:%>тк%{Э%}%{ː%} N-N ;
 !%<n%>%<child%>:%>т N ; ! Dir/LR
 !%<n%>%<child%>:%>т N ; ! Dir/LR
 
@@ -841,9 +862,9 @@ LEXICON NOMINAL-INFL-N-PL
 %<pl%>%<nom%>:%>р POSS-PL-CLITICS ;
 %<pl%>:%>р CASE-OBL-POSS ;
 %<pl%>%<ins%>:%>р%>ди POSS-SG-CLITICS ;
-%<pl-sal%>%<nom%>:%>с%{A%}л POSS-PL-CLITICS ;
-%<pl-sal%>:%>с%{A%}л CASE-OBL-POSS ;
-%<pl-sal%>%<ins%>:%>с%{A%}л%>ди POSS-SG-CLITICS ;
+%<pl-sal%>%<nom%>:%>с%{Э%}л POSS-PL-CLITICS ;
+%<pl-sal%>:%>с%{Э%}л CASE-OBL-POSS ;
+%<pl-sal%>%<ins%>:%>с%{Э%}л%>ди POSS-SG-CLITICS ;
 
 LEXICON NOMINAL-INFL-N
 
@@ -869,13 +890,13 @@ LEXICON NOUN-N
 
 %<n%>: N-N ;
 %<n%>: N-DERIV-ETC ;
-%<n%>%<child%>:%>чик%{A%}%{ː%} N-N ;
+%<n%>%<child%>:%>чик%{Э%}%{ː%} N-N ;
 
 LEXICON NOUN-N-SG
 
 %<n%>: N-N-SG ;
 %<n%>: N-DERIV-ETC ;
-%<n%>%<child%>:%>чик%{A%}%{ː%} N-N ;
+%<n%>%<child%>:%>чик%{Э%}%{ː%} N-N ;
 
 LEXICON NOMINAL-INFL-RUS-N
 
@@ -885,9 +906,9 @@ LEXICON NOMINAL-INFL-RUS-N
 %<pl%>%<nom%>:%>%{i%}л POSS-PL-CLITICS ;
 %<pl%>:%>%{i%}л CASE-OBL-POSS ;
 %<pl%>%<ins%>:%>%{i%}л%>ди POSS-SG-CLITICS ;
-%<pl-sal%>%<nom%>:%>с%{A%}л POSS-PL-CLITICS ;
-%<pl-sal%>:%>с%{A%}л CASE-OBL-POSS ;
-%<pl-sal%>%<ins%>:%>с%{A%}л%>ди POSS-SG-CLITICS ;
+%<pl-sal%>%<nom%>:%>с%{Э%}л POSS-PL-CLITICS ;
+%<pl-sal%>:%>с%{Э%}л CASE-OBL-POSS ;
+%<pl-sal%>%<ins%>:%>с%{Э%}л%>ди POSS-SG-CLITICS ;
 
 LEXICON NOUN-RUS-N
 
@@ -912,7 +933,7 @@ LEXICON PRON-PERS-CASES-OTHER          ! Except 3rd-person sg and pl
 %<abl%>:%>%{D%}ук CLITICS ;
 %<ela%>:%>%{G%}ит%{д%} CLITICS ;
 %<com-nun%>:%>нун CLITICS ;
-%<com-gali%>:%>%{G%}%{A%}ли CLITICS ;
+%<com-gali%>:%>%{G%}%{Э%}ли CLITICS ;
 
 PRON-PERS-POSS ;
 
@@ -927,51 +948,54 @@ LEXICON PRON-PERS-POSS
 
 LEXICON PRON-PERS-POSS-3-SG-CASE-OBL
 
-%<acc%>%<def%>%<px3sg%>:%>%{V%}%{A%}%>н CLITICS ;
+%<acc%>%<def%>%<px3sg%>:%>%{V%}%{Э%}%>н CLITICS ;
+%<acc%>%<def%>%<px3sg%>:%>%{Б%}%{Э%}%>н CLITICS ; ! Dir/LR
 %<datloc%>%<px3sg%>:%>%{D%}у%{ː%}%>н CLITICS ;
-%<locall%>%<px3sg%>:%>%{D%}%{u%}л%{A%}%{ː%}%>н CLITICS ;
+%<locall%>%<px3sg%>:%>%{D%}%{u%}л%{Э%}%{ː%}%>н CLITICS ;
 %<all%>%<px3sg%>:%>т%{i%}ки%{ː%}%>н CLITICS ;
 %<prl%>%<px3sg%>:%>%{D%}%{u%}ли%{ː%}%>н CLITICS ;
-%<locdir%>%<px3sg%>:%>%{i%}кл%{A%}%{ː%}%>н CLITICS ;
+%<locdir%>%<px3sg%>:%>%{i%}кл%{Э%}%{ː%}%>н CLITICS ;
 %<allprl%>%<px3sg%>:%>%{i%}кли%{ː%}%>н CLITICS ;
 %<abl%>%<px3sg%>:%>%{D%}ук%>ин CLITICS ;
 %<ela%>%<px3sg%>:%>%{G%}ид%>ин CLITICS ;
 %<ins%>%<px3sg%>:ди%>н CLITICS ;
 %<com-nun%>%<px3sg%>:%>нун%>ин CLITICS ;
-%<com-gali%>%<px3sg%>:%>%{G%}%{A%}ли%>ин PRON-PERS-3-PL-PX ;
+%<com-gali%>%<px3sg%>:%>%{G%}%{Э%}ли%>ин PRON-PERS-3-PL-PX ;
 
 LEXICON PRON-PERS-3-PL-PX
 
 %<px3pl%>:%>тын CLITICS ;
+%<px3pl%>:%>тин CLITICS ; ! Dir/LR
 
 LEXICON PRON-PERS-POSS-3-PL-CASE-OBL
 
-%<acc%>%<def%>:%>%{V%}%{A%} PRON-PERS-3-PL-PX ;
+%<acc%>%<def%>:%>%{V%}%{Э%} PRON-PERS-3-PL-PX ;
+%<acc%>%<def%>:%>%{Б%}%{Э%} PRON-PERS-3-PL-PX ; ! Dir/LR
 %<datloc%>:%>%{D%}у%{ː%} PRON-PERS-3-PL-PX ;
-%<locall%>:%>%{D%}%{u%}л%{A%}%{ː%} PRON-PERS-3-PL-PX ;
+%<locall%>:%>%{D%}%{u%}л%{Э%}%{ː%} PRON-PERS-3-PL-PX ;
 %<all%>:%>т%{i%}ки%{ː%} PRON-PERS-3-PL-PX ;
 %<prl%>:%>%{D%}%{u%}ли%{ː%} PRON-PERS-3-PL-PX ;
-%<locdir%>:%>%{i%}кл%{A%}%{ː%} PRON-PERS-3-PL-PX ;
+%<locdir%>:%>%{i%}кл%{Э%}%{ː%} PRON-PERS-3-PL-PX ;
 %<allprl%>:%>%{i%}кли%{ː%} PRON-PERS-3-PL-PX ;
 %<abl%>:%>%{D%}ук PRON-PERS-3-PL-PX ;
 %<ela%>:%>%{G%}иди PRON-PERS-3-PL-PX ;
 %<ins%>:ди PRON-PERS-3-PL-PX ;
 %<com-nun%>:%>нун PRON-PERS-3-PL-PX ;
-%<com-gali%>:%>%{G%}%{A%}ли PRON-PERS-3-PL-PX ;
+%<com-gali%>:%>%{G%}%{Э%}ли PRON-PERS-3-PL-PX ;
 
-%<eqt-gačin%>:%{G%}%{A%}чин POSS-SG-N-CLITICS ; !FIX
-%<eqt-gačin%>:%{G%}%{A%}чин CASE-OBL-POSS ;
-%<eqt-gačin%>%<ins%>:%{G%}%{A%}чин%>ди POSS-SG-CLITICS ;
-%<eqt-gačin%>%<pl%>:%{G%}%{A%}чи%>р POSS-PL-CLITICS ;
-%<eqt-gačin%>%<pl%>:%{G%}%{A%}чи%>р CASE-OBL-POSS ;
-%<eqt-gačin%>%<pl%>%<ins%>:%{G%}%{A%}чи%>р%>ди POSS-SG-CLITICS ;
+%<eqt-gačin%>:%{G%}%{Э%}чин POSS-SG-N-CLITICS ; !FIX
+%<eqt-gačin%>:%{G%}%{Э%}чин CASE-OBL-POSS ;
+%<eqt-gačin%>%<ins%>:%{G%}%{Э%}чин%>ди POSS-SG-CLITICS ;
+%<eqt-gačin%>%<pl%>:%{G%}%{Э%}чи%>р POSS-PL-CLITICS ;
+%<eqt-gačin%>%<pl%>:%{G%}%{Э%}чи%>р CASE-OBL-POSS ;
+%<eqt-gačin%>%<pl%>%<ins%>:%{G%}%{Э%}чи%>р%>ди POSS-SG-CLITICS ;
 
 %<eqt-dyn%>:%{D%}ын CLITICS ;
 %<eqt-dyn%>:%{D%}ын CASE-OBL ;
 %<eqt-dyn%>%<ins%>:%{D%}ын%>ди CLITICS ;
-%<eqt-dyn%>%<pl%>:%{D%}ы%>с%{A%}л CLITICS ;
-%<eqt-dyn%>%<pl%>:%{D%}ы%>с%{A%}л CASE-OBL ;
-%<eqt-dyn%>%<pl%>%<ins%>:%{D%}ы%>с%{A%}л%>%{i%}т%{д%} CLITICS ;
+%<eqt-dyn%>%<pl%>:%{D%}ы%>с%{Э%}л CLITICS ;
+%<eqt-dyn%>%<pl%>:%{D%}ы%>с%{Э%}л CASE-OBL ;
+%<eqt-dyn%>%<pl%>%<ins%>:%{D%}ы%>с%{Э%}л%>%{i%}т%{д%} CLITICS ;
 
 
 LEXICON PRON-PERS
@@ -1015,6 +1039,14 @@ LEXICON PRON-PERS
 мит%<prn%>%<pers%>%<p1%>%<pi%>%<ins%>:мит%>ы%{э%}т CLITICS ;
 мит%<prn%>%<pers%>%<p1%>%<pi%>:ми%{э%}т PRON-PERS-CASES-OTHER ;
 
+мит%<prn%>%<pers%>%<p1%>%<pi%>%<nom%>:му%{э%}т CLITICS ; ! Dir/LR
+мит%<prn%>%<pers%>%<p1%>%<pi%>%<acc%>%<def%>:мут%>вэ CLITICS ; ! Dir/LR
+мит%<prn%>%<pers%>%<p1%>%<pi%>%<acc%>%<def%>:мут%>пэ CLITICS ; ! Dir/LR
+мит%<prn%>%<pers%>%<p1%>%<pi%>%<locdir%>:мут%>тыклэ%{ː%} CLITICS ; ! Dir/LR
+мит%<prn%>%<pers%>%<p1%>%<pi%>%<allprl%>:мут%>тыкли%{ː%}%{э%} CLITICS ; ! Dir/LR
+мит%<prn%>%<pers%>%<p1%>%<pi%>%<ins%>:мут%>ы%{э%}т CLITICS ; ! Dir/LR
+мит%<prn%>%<pers%>%<p1%>%<pi%>:му%{э%}т PRON-PERS-CASES-OTHER ; ! Dir/LR
+
 сӯ%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:су%{ː%}%{э%} CLITICS ;
 сӯ%<prn%>%<pers%>%<p2%>%<pl%>:су%{э%}н PRON-PERS-CASES-P12 ;
 сӯ%<prn%>%<pers%>%<p2%>%<pl%>:су%{э%}н PRON-PERS-CASES-OTHER ;
@@ -1034,21 +1066,25 @@ LEXICON PRON-PERS
 нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<com-gali%>:нуӈар%>гали PRON-PERS-3-PL-PX ;
 нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<poss%>%<sg%>%<nom%>:нуӈар%>ӈи%{ː%} PRON-PERS-3-PL-PX ;
 нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<poss%>%<sg%>:нуӈар%>ӈи PRON-PERS-POSS-3-PL-CASE-OBL ;
+нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<poss%>%<sg%>%<nom%>:нуӈан%>ӈи%{ː%} PRON-PERS-3-PL-PX ; ! Dir/LR
+нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<poss%>%<sg%>:нуӈан%>ӈи%{ː%} PRON-PERS-POSS-3-PL-CASE-OBL ; ! Dir/LR
 нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<poss%>%<pl%>%<nom%>:нуӈар%>ӈи%{ː%}%>л PRON-PERS-3-PL-PX ;
 нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<poss%>%<pl%>:нуӈар%>ӈи%{ː%}%>л PRON-PERS-POSS-3-PL-CASE-OBL ;
+нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<poss%>%<pl%>%<nom%>:нуӈан%>ӈи%{ː%}%>л PRON-PERS-3-PL-PX ; ! Dir/LR
+нуӈартын%<prn%>%<pers%>%<p3%>%<pl%>%<poss%>%<pl%>:нуӈан%>ӈи%{ː%}%>л PRON-PERS-POSS-3-PL-CASE-OBL ; ! Dir/LR
 
 LEXICON PRON-DEM-CASES
 
-%<prn%>%<dem%>%<sg%>%<acc%>%<def%>:%>%{A%} POSS-SG-CLITICS ;
+%<prn%>%<dem%>%<sg%>%<acc%>%<def%>:%>%{Э%} POSS-SG-CLITICS ;
 %<prn%>%<dem%>%<sg%>%<acc%>%<def%>:%>эвэ POSS-SG-CLITICS ; ! Dir/LR
-%<prn%>%<dem%>%<sg%>%<acc%>%<ind%>:%>%{ъ%}%{Я%} POSS-SG-CLITICS ;
+%<prn%>%<dem%>%<sg%>%<acc%>%<ind%>:%>%{ъ%}%{Е%} POSS-SG-CLITICS ;
 %<prn%>%<dem%>%<sg%>%<all%>:%>тыки%{ː%} POSS-SG-CLITICS ;
-%<prn%>%<dem%>%<sg%>%<locdir%>:%>икл%{A%}%{ː%} POSS-SG-CLITICS ;
+%<prn%>%<dem%>%<sg%>%<locdir%>:%>икл%{Э%}%{ː%} POSS-SG-CLITICS ;
 %<prn%>%<dem%>%<sg%>%<allprl%>:%>икли%{ː%} POSS-SG-CLITICS ;
 %<prn%>%<dem%>%<sg%>%<ela%>:%>гит POSS-SG-CLITICS ;
 %<prn%>%<dem%>%<sg%>%<ins%>:%>ит POSS-SG-CLITICS ;
 %<prn%>%<dem%>%<sg%>%<com-nun%>:%>нун POSS-SG-N-CLITICS ;
-%<prn%>%<dem%>%<sg%>%<com-gali%>:%>%{G%}%{A%}ли POSS-SG-CLITICS ;
+%<prn%>%<dem%>%<sg%>%<com-gali%>:%>%{G%}%{Э%}ли POSS-SG-CLITICS ;
 %<prn%>%<dem%>%<pl%>%<nom%>:%>ил POSS-PL-CLITICS ;
 %<prn%>%<dem%>%<pl%>%<ins%>:%>ил%>ди POSS-SG-CLITICS ;
 %<prn%>%<dem%>%<pl%>:%>ил CASE-OBL-POSS ;
@@ -1120,12 +1156,13 @@ LEXICON PRON-REF
 
 LEXICON PRON-REF-PERS-CASES
 
-%<acc%>%<def%>:%>%{V%}%{A%} POSS-SG-CLITICS ;
+%<acc%>%<def%>:%>%{V%}%{Э%} POSS-SG-CLITICS ;
+%<acc%>%<def%>:%>%{Б%}%{Э%} POSS-SG-CLITICS ; ! Dir/LR
 %<datloc%>:%>%{D%}у%{ː%} POSS-SG-CLITICS ;
-%<locall%>:%>%{D%}%{u%}л%{A%}%{ː%} POSS-SG-CLITICS ;
+%<locall%>:%>%{D%}%{u%}л%{Э%}%{ː%} POSS-SG-CLITICS ;
 %<all%>:%>т%{i%}ки%{ː%} POSS-SG-CLITICS ;
 %<prl%>:%>%{D%}%{u%}ли%{ː%} POSS-SG-CLITICS ;
-%<locdir%>:%>%{i%}кл%{A%}%{ː%} POSS-SG-CLITICS ;
+%<locdir%>:%>%{i%}кл%{Э%}%{ː%} POSS-SG-CLITICS ;
 %<allprl%>:%>%{i%}кли%{ː%} POSS-SG-CLITICS ;
 %<abl%>:%>%{D%}ук POSS-SG-CLITICS ;
 %<ela%>:%>%{G%}ит%{д%} POSS-SG-CLITICS ;
@@ -1135,6 +1172,7 @@ LEXICON PRON-REF-PERS-CASES
 LEXICON PRON-REF-PERS
 
 %<prn%>%<ref%>%<sg%>%<nom%>%<px1sg%>:н%>ми CLITICS ;
+%<prn%>%<ref%>%<sg%>%<nom%>%<px1sg%>:м CLITICS ; ! Dir/LR
 %<prn%>%<ref%>%<sg%>%<nom%>%<px2sg%>:н%>ни CLITICS ;
 %<prn%>%<ref%>%<sg%>%<nom%>%<px3sg%>:н%>ин CLITICS ;
 %<prn%>%<ref%>%<sg%>:н PRON-REF-PERS-CASES ;
@@ -1148,18 +1186,18 @@ LEXICON A-INFL
 
 NOMINAL-INFL ;
 
-%<comp%>:%>%{D%}%{ы%}м%{A%}р NOMINAL-INFL ;
+%<comp%>:%>%{D%}%{ы%}м%{Э%}р NOMINAL-INFL ;
 %<sup%>:%>%{D%}%{ы%}%{G%}у NOMINAL-INFL ;
 
-%<ints1%>:%>к%{A%}%{ː%}ку NOMINAL-INFL-N ;
-%<ints2%>:%>м%{A%}м%{A%} NOMINAL-INFL ;
-%<ints2%>:%>м%{A%} NOMINAL-INFL ; ! Dir/LR
+%<ints1%>:%>к%{Э%}%{ː%}ку NOMINAL-INFL-N ;
+%<ints2%>:%>м%{Э%}м%{Э%} NOMINAL-INFL ;
+%<ints2%>:%>м%{Э%} NOMINAL-INFL ; ! Dir/LR
 
-%<atten1%>:%>к%{A%}%{ː%} NOMINAL-INFL-N ;
-%<atten1%>:%>к%{A%}%{ː%}к%{A%}%{ː%} NOMINAL-INFL-N ; ! Dir/LR
+%<atten1%>:%>к%{Э%}%{ː%} NOMINAL-INFL-N ;
+%<atten1%>:%>к%{Э%}%{ː%}к%{Э%}%{ː%} NOMINAL-INFL-N ; ! Dir/LR
 %<atten2%>:%>ми NOMINAL-INFL-N ;
 
-%<advz-mat%>:%>м%{A%}т ADV ;
+%<advz-mat%>:%>м%{Э%}т ADV ;
 %<advz-t%>:%>т ADV ;
 
 LEXICON A
@@ -1175,18 +1213,18 @@ LEXICON A-N-INFL
 
 NOMINAL-INFL-N ;
 
-%<comp%>:н%>%{D%}%{ы%}м%{A%}р NOMINAL-INFL ;
+%<comp%>:н%>%{D%}%{ы%}м%{Э%}р NOMINAL-INFL ;
 %<sup%>:н%>%{D%}%{ы%}%{G%}у NOMINAL-INFL ;
 %<sup%>:н%>%{D%}%{ы%}%{G%}у NOMINAL-INFL ;
 
-%<ints1%>:н%>к%{A%}ку%{ː%} NOMINAL-INFL-N ;
-%<ints2%>:н%>м%{A%}м%{A%} NOMINAL-INFL ;
+%<ints1%>:н%>к%{Э%}ку%{ː%} NOMINAL-INFL-N ;
+%<ints2%>:н%>м%{Э%}м%{Э%} NOMINAL-INFL ;
 
-%<atten1%>:н%>к%{A%}%{ː%} NOMINAL-INFL-N ;
-%<atten1%>:н%>к%{A%}к%{A%}%{ː%} NOMINAL-INFL-N ; ! Dir/LR
+%<atten1%>:н%>к%{Э%}%{ː%} NOMINAL-INFL-N ;
+%<atten1%>:н%>к%{Э%}к%{Э%}%{ː%} NOMINAL-INFL-N ; ! Dir/LR
 %<atten2%>:н%>ми NOMINAL-INFL-N ;
 
-%<advz-mat%>:н%>м%{A%}т ADV ;
+%<advz-mat%>:н%>м%{Э%}т ADV ;
 %<advz-t%>:н%>ди ADV ;
 
 LEXICON A-N
@@ -1222,7 +1260,9 @@ LEXICON ABBR
 LEXICON V-PERS-1-P1P2-SG
 
 %<p1%>%<sg%>:%>%{i%}м CLITICS ;
+%<p1%>%<sg%>:%>%{i%}м%{Э%} CLITICS ; ! Dir/LR
 %<p2%>%<sg%>:%>%{i%}нни CLITICS ;
+%<p2%>%<sg%>:%>ндэ CLITICS ; ! Dir/LR
 
 LEXICON V-PERS-1-P1PE-P3PL
 
@@ -1240,9 +1280,12 @@ LEXICON V-PERS-1
 
 %<p1%>%<sg%>:%>м CLITICS ;
 %<p2%>%<sg%>:%>нни CLITICS ;
+%<p2%>%<sg%>:%>ндэ CLITICS ; ! Dir/LR
 %<p3%>%<sg%>:%>н CLITICS ;
 %<p1%>%<pe%>:%>в CLITICS ;
+%<p1%>%<pe%>:%>вун CLITICS ; ! Dir/LR
 %<p1%>%<pi%>:%>п CLITICS ;
+%<p1%>%<pi%>:%>т CLITICS ; ! Dir/LR
 %<p2%>%<pl%>:%>с CLITICS ;
 %<p3%>%<pl%>: CLITICS ;
 
@@ -1252,6 +1295,7 @@ LEXICON V-PERS-2-WITHOUT-P3
 %<p2%>%<sg%>:%>с CLITICS ;
 %<p1%>%<pe%>:%>вун CLITICS ;
 %<p1%>%<pi%>:%>т CLITICS ;
+%<p1%>%<pi%>:%>лты CLITICS ; ! Dir/LR
 %<p2%>%<pl%>:%>сун CLITICS ;
 
 !LEXICON V-PERS-2-P1PI-P3PL
@@ -1266,93 +1310,101 @@ LEXICON V-PERS-2
 %<p3%>%<sg%>:%>н CLITICS ;
 %<p1%>%<pe%>:%>вун CLITICS ;
 %<p1%>%<pi%>:%>т CLITICS ;
+%<p1%>%<pi%>:%>лты CLITICS ; ! Dir/LR
 %<p2%>%<pl%>:%>сун CLITICS ;
 %<p3%>%<pl%>:%>тын CLITICS ;
+%<p3%>%<pl%>:%>тин CLITICS ; ! Dir/LR
 
 LEXICON IRREG
 
 NFUT ;
-%<nfut-irreg%>:д%{A%}%{ː%} V-PERS-1 ;
+%<nfut-irreg%>:д%{Э%}%{ː%} V-PERS-1 ;
 %<p-neg%>:%>да CLITICS ;
-%<conv-cond-ds%>:%>д%{A%}к POSS-SG-PX ; ! contextual anteriority
+%<conv-cond-ds%>:%>д%{Э%}к POSS-SG-PX ; ! contextual anteriority
 
 LEXICON PRES
 
-%<pres%>:%>%{D%}%{Я%} V-PERS-1-P1P2-SG ;
-%<pres%>:%>%{D%}%{Я%}р%{A%} V-PERS-1-P1PE-P3PL ;
-%<pres%>:%>%{D%}%{Я%}р%{A%} V-PERS-1-P3SG-P1PI-P2PL ;
+%<pres%>:%>%{D%}%{Е%} V-PERS-1-P1P2-SG ;
+%<pres%>:%>%{D%}%{Е%}р%{Э%} V-PERS-1-P1PE-P3PL ;
+%<pres%>:%>%{D%}%{Е%}р%{Э%} V-PERS-1-P3SG-P1PI-P2PL ;
 
 LEXICON NFUT
 
 %<nfut%>: V-PERS-1-P1P2-SG ;
-%<nfut%>:%>%{r%}%{A%} V-PERS-1-P1PE-P3PL ;
-%<nfut%>:%>%{r%}%{A%} V-PERS-1-P3SG-P1PI-P2PL ;
+%<nfut%>:%>%{r%}%{Э%} V-PERS-1-P1PE-P3PL ;
+%<nfut%>:%>%{r%}%{Э%} V-PERS-1-P3SG-P1PI-P2PL ;
 
 LEXICON FUTCNT
 
-%<futcnt%>:%>%{D%}%{Я%} V-PERS-1-P1P2-SG ;
-%<futcnt%>:%>%{D%}%{Я%} V-PERS-1-P3SG-P1PI-P2PL ;
-%<futcnt%>:%>%{D%}%{Я%}р%{A%} V-PERS-1-P1PE-P3PL ;
+%<futcnt%>:%>%{D%}%{Е%} V-PERS-1-P1P2-SG ;
+%<futcnt%>:%>%{D%}%{Е%} V-PERS-1-P3SG-P1PI-P2PL ;
+%<futcnt%>:%>%{D%}%{Е%}р%{Э%} V-PERS-1-P1PE-P3PL ;
 
 LEXICON TENSE-MOOD-WITHOUT-FUTCNT
 
-%<past%>:%>ч%{A%}%{ː%} V-PERS-2 ;
+%<past%>:%>ч%{Э%}%{ː%} V-PERS-2 ;
+%<past%>:%{n%}%>ч%{Э%}%{ː%} V-PERS-2 ; ! Dir/LR
+%<past%>:%>%{Ч%}%{О%}%{ː%} V-PERS-2 ; ! Dir/LR
 %<past-iter%>:%>%{i%}ӈки%{ː%} V-PERS-2 ;
-%<fut%>:%>%{D%}%{Я%}ӈ%{A%}%{ː%} V-PERS-2 ;
-%<futnear%>:%>%{D%}%{Я%}л V-PERS-1-P1P2-SG ;
-%<futnear%>:%>%{D%}%{Я%}лл%{A%} V-PERS-1-P3SG-P1PI-P2PL ;
-%<futnear%>:%>%{D%}%{Я%}лл%{A%} V-PERS-1-P1PE-P3PL ;
-%<cond%>:%>%{i%}мч%{A%}%{ː%} V-PERS-2-WITHOUT-P3 ;
-%<cond%>%<p3%>%<sg%>:%>%{i%}мч%{A%}%{ː%} CLITICS ;
-%<cond%>%<p3%>%<pl%>:%>%{i%}мч%{A%}%{ː%}%>л CLITICS ;
+%<fut%>:%>%{D%}%{Е%}ӈ%{Э%}%{ː%} V-PERS-2 ;
+%<futnear%>:%>%{D%}%{Е%}л V-PERS-1-P1P2-SG ;
+%<futnear%>:%>%{D%}%{Е%}лл%{Э%} V-PERS-1-P3SG-P1PI-P2PL ;
+%<futnear%>:%>%{D%}%{Е%}лл%{Э%} V-PERS-1-P1PE-P3PL ;
+%<cond%>:%>%{i%}мч%{Э%}%{ː%} V-PERS-2-WITHOUT-P3 ;
+%<cond%>%<p3%>%<sg%>:%>%{i%}мч%{Э%}%{ː%} CLITICS ;
+%<cond%>%<p3%>%<pl%>:%>%{i%}мч%{Э%}%{ː%}%>л CLITICS ;
 
 !! Imperatives
 
 ! Nearest future imperative
-%<imp%>%<prox%>%<p1%>%<sg%>:%>кт%{A%} CLITICS ;
-%<imp%>%<prox%>%<p2%>%<sg%>:%>к%{A%}л CLITICS ; ! add from Boldyrev p.706
+%<imp%>%<prox%>%<p1%>%<sg%>:%>кт%{Э%} CLITICS ;
+%<imp%>%<prox%>%<p2%>%<sg%>:%>к%{Э%}л CLITICS ; ! add from Boldyrev p.706
 %<imp%>%<prox%>%<p3%>%<sg%>:%>%{G%}ин CLITICS ;
+%<imp%>%<prox%>%<p1%>%<pe%>:%>кт%{Э%}вун CLITICS ; ! Dir/LR
 %<imp%>%<prox%>%<p1%>%<pe%>:%>квун CLITICS ;
-%<imp%>%<prox%>%<p1%>%<pi%>:%>%{Г%}%{A%}%{ː%}т CLITICS ; ! add from Boldyrev p.712
-%<imp%>%<prox%>%<p1%>%<pi%>:%>м%{A%}%{ː%}т CLITICS ; ! add from Boldyrev p.712
-%<imp%>%<prox%>%<p2%>%<pl%>:%>к%{A%}ллу CLITICS ;
+%<imp%>%<prox%>%<p1%>%<pi%>:%>%{Г%}%{Э%}%{ː%}т CLITICS ; ! add from Boldyrev p.712
+%<imp%>%<prox%>%<p1%>%<pi%>:%>м%{Э%}%{ː%}т CLITICS ; ! add from Boldyrev p.712
+%<imp%>%<prox%>%<p2%>%<pl%>:%>к%{Э%}ллу CLITICS ;
+%<imp%>%<prox%>%<p2%>%<pl%>:%>к%{Э%}лду CLITICS ; ! Dir/LR
 %<imp%>%<prox%>%<p3%>%<pl%>:%>ктын CLITICS ;
 
 ! Remote future imperative
-%<imp%>%<rem%>%<p1%>%<sg%>:%>ӈн%{A%}%{ː%}м CLITICS ;
-%<imp%>%<rem%>%<p2%>%<sg%>:%>%{D%}%{A%}%{ː%}ви CLITICS ;
-%<imp%>%<rem%>%<p3%>%<sg%>:%>ӈн%{A%}%{ː%}н CLITICS ;
-%<imp%>%<rem%>%<p1%>%<pe%>:%>ӈн%{A%}%{ː%}в CLITICS ;
-%<imp%>%<rem%>%<p1%>%<pi%>:%>ӈн%{A%}%{ː%}р CLITICS ;
-%<imp%>%<rem%>%<p2%>%<pl%>:%>%{D%}%{A%}в%{A%}р CLITICS ;
-%<imp%>%<rem%>%<p3%>%<pl%>:%>ӈн%{A%}%{ː%}тын CLITICS ;
+%<imp%>%<rem%>%<p1%>%<sg%>:%>ӈн%{Э%}%{ː%}м CLITICS ;
+%<imp%>%<rem%>%<p2%>%<sg%>:%>%{D%}%{Э%}%{ː%}ви CLITICS ;
+%<imp%>%<rem%>%<p3%>%<sg%>:%>ӈн%{Э%}%{ː%}н CLITICS ;
+%<imp%>%<rem%>%<p1%>%<pe%>:%>ӈн%{Э%}%{ː%}в CLITICS ;
+%<imp%>%<rem%>%<p1%>%<pi%>:%>ӈн%{Э%}%{ː%}р CLITICS ;
+%<imp%>%<rem%>%<p2%>%<pl%>:%>%{D%}%{Э%}в%{Э%}р CLITICS ;
+%<imp%>%<rem%>%<p3%>%<pl%>:%>ӈн%{Э%}%{ː%}тын CLITICS ;
 
 !! Optative
 
-%<opt%>:%>ӈ%{A%}ты V-PERS-2 ;
+%<opt%>:%>ӈ%{Э%}ты V-PERS-2 ;
 
 !! Debitive
 
-%<oblg%>%<p1%>%<sg%>:%>м%{A%}чи%>м CLITICS ; ! check Boldyrev p.718
-%<oblg%>%<p2%>%<sg%>:%>м%{A%}чи%>нни CLITICS ;
-%<oblg%>%<p3%>%<sg%>:%>м%{A%}чин%>ин CLITICS ;
-%<oblg%>%<p1%>%<pe%>:%>м%{A%}чин%>мун CLITICS ;
-%<oblg%>%<p1%>%<pi%>:%>м%{A%}чин%>ты CLITICS ;
-%<oblg%>%<p2%>%<pl%>:%>м%{A%}чин%>сун CLITICS ;
-%<oblg%>%<p3%>%<pl%>:%>м%{A%}чи%>р CLITICS ;
+%<oblg%>%<p1%>%<sg%>:%>м%{Э%}чи%>м CLITICS ; ! check Boldyrev p.718
+%<oblg%>%<p2%>%<sg%>:%>м%{Э%}чи%>нни CLITICS ;
+%<oblg%>%<p3%>%<sg%>:%>м%{Э%}чи%>н CLITICS ;
+%<oblg%>%<p3%>%<sg%>:%>м%{Э%}чин%>ин CLITICS ; ! Dir/LR
+%<oblg%>%<p1%>%<pe%>:%>м%{Э%}чин%>мун CLITICS ;
+%<oblg%>%<p1%>%<pi%>:%>м%{Э%}чин%>ты CLITICS ;
+%<oblg%>%<p2%>%<pl%>:%>м%{Э%}чин%>сун CLITICS ;
+%<oblg%>%<p3%>%<pl%>:%>м%{Э%}чи%>р CLITICS ;
+%<oblg%>%<p3%>%<pl%>:%>м%{Э%}чин%>тын CLITICS ; ! Dir/LR
 
 !! Degrees of certainty
 
 ! Probability of a situation which either takes place in the present or took place recently
-%<prob1%>:%>н%{A%}%{ː%} V-PERS-1-P1P2-SG ;
-%<prob1%>:%>н%{A%}%{ː%} V-PERS-1-P3SG-P1PI-P2PL ;
-%<prob1%>%<p1%>%<pe%>:%>н%{A%}%{ː%}рэв CLITICS ;
-%<prob1%>%<p3%>%<pl%>:%>н%{A%}%{ː%}рэ CLITICS ;
+%<prob1%>:%>н%{Э%}%{ː%} V-PERS-1-P1P2-SG ;
+%<prob1%>:%>н%{Э%}%{ː%} V-PERS-1-P3SG-P1PI-P2PL ;
+%<prob1%>%<p1%>%<pe%>:%>н%{Э%}%{ː%}рэв CLITICS ;
+%<prob1%>%<p3%>%<pl%>:%>н%{Э%}%{ː%}рэ CLITICS ;
 
 ! Probability of a situation which might have taken place in the past
-%<prob2%>:%>рк%{A%} V-PERS-2-WITHOUT-P3 ;
-%<prob2%>%<p3%>%<sg%>:%>рк%{A%} CLITICS ;
-%<prob2%>%<p3%>%<pl%>:%>рк%{A%}л CLITICS ;
+%<prob2%>:%>рк%{Э%} V-PERS-2-WITHOUT-P3 ;
+%<prob2%>%<p3%>%<sg%>:%>рк%{Э%} CLITICS ;
+%<prob2%>%<p3%>%<pl%>:%>рк%{Э%}л CLITICS ;
 
 ! Probability of a situation which takes place habitually
 %<prob3%>:%>ргу V-PERS-1-P1P2-SG ;
@@ -1362,8 +1414,8 @@ LEXICON TENSE-MOOD-WITHOUT-FUTCNT
 
 !! Monitory-imperative
 
-%<mon-imp%>%<p2%>%<sg%>:%>н%{A%} CLITICS ;
-%<mon-imp%>%<p2%>%<pl%>:%>н%{A%}л CLITICS ;
+%<mon-imp%>%<p2%>%<sg%>:%>н%{Э%} CLITICS ;
+%<mon-imp%>%<p2%>%<pl%>:%>н%{Э%}л CLITICS ;
 
 ! other forms expressing modal meanings p.267
 
@@ -1380,15 +1432,19 @@ TENSE-MOOD ;
 
 LEXICON PARTICIPLES-WITHOUT-PSIM-PNEG
 
-%<p-ant%>:%>ч%{A%}%{ː%} NOMINAL-INFL ; ! participle of anteriority
-%<p-pf%>:%>н%{A%} NOMINAL-INFL-OBLIGATORY-POSS ; ! perfect participle 
+%<p-ant%>:%>ч%{Э%}%{ː%} NOMINAL-INFL ; ! participle of anteriority
+%<p-ant%>:%>%{Ч%}%{О%}%{ː%} NOMINAL-INFL ; ! Dir/LR
+%<p-pf%>:%>н%{Э%} NOMINAL-INFL-OBLIGATORY-POSS ; ! perfect participle 
 %<p-hab%>:%>вки%{ː%} NOMINAL-INFL ; ! habitual participle
-%<p-post%>:%>%{D%}%{Я%}ӈ%{A%}%{ː%} NOMINAL-INFL ; ! participle of posteriority
-%<p-deb%>:%>м%{A%}чи%{ː%} NOMINAL-INFL-N ; ! debitive participle
-%<p-purp%>:%>ӈ%{A%}%{ː%}т NOMINAL-INFL ; ! debitive participle
-%<p-impdeb%>:%>вк%{A%} NOMINAL-INFL ; ! impersonal-debitive participle 
-%<p-fict%>:%>гс%{A%} NOMINAL-INFL-N ; ! participle of fictitious action
-%<p-immfut%>:%>лт%{A%}к NOMINAL-INFL ; ! participle of contact posteriority
+%<p-hab%>:%>пки%{ː%} NOMINAL-INFL ; ! habitual participle ! Dir/LR
+%<p-post%>:%>%{D%}%{Е%}ӈ%{Э%}%{ː%} NOMINAL-INFL ; ! participle of posteriority
+%<p-deb%>:%>м%{Э%}чи%{ː%} NOMINAL-INFL-N ; ! debitive participle
+%<p-purp%>:%>ӈ%{Э%}%{ː%}т NOMINAL-INFL ; ! debitive participle
+%<p-impdeb%>:%>вк%{Э%} NOMINAL-INFL ; ! impersonal-debitive participle 
+!%<p-impdeb%>:%>пк%{Э%} NOMINAL-INFL ; ! Dir/LR
+%<p-fict%>:%>гс%{Э%} NOMINAL-INFL-N ; ! participle of fictitious action
+%<p-fict%>:%>кс%{Э%}%{ː%} NOMINAL-INFL-N ; ! participle of fictitious action ! Dir/LR
+%<p-immfut%>:%>лт%{Э%}к NOMINAL-INFL ; ! participle of contact posteriority
 
 LEXICON PARTICIPLES-WITHOUT-PNEG
 
@@ -1398,7 +1454,7 @@ PARTICIPLES-WITHOUT-PSIM-PNEG ;
 LEXICON PARTICIPLES
 
 PARTICIPLES-WITHOUT-PNEG ;
-%<p-neg%>:%>%{r%}%{A%} CLITICS ; ! participle used as a fixed form with all the forms of the conjugated negative
+%<p-neg%>:%>%{r%}%{Э%} CLITICS ; ! participle used as a fixed form with all the forms of the conjugated negative
                                  ! auxiliary e- 'not to ... 'in all syntactic functions
 
 LEXICON CONV-NUMBER
@@ -1414,26 +1470,27 @@ LEXICON CONV-NUMBER-N
 
 LEXICON CONVERBS-WITHOUT-COND-SS
 
-%<conv-sim-ss%>:%>н%{A%} CONV-NUMBER ; ! contextual simultaneity
-%<conv-sim-ds%>:%>ӈ%{A%}си%{ː%} POSS-SG-REF ; ! exact simultaneity
-%<conv-ant-ss%>:%>кс%{A%}%{ː%} CONV-NUMBER ; ! anteriority proper
-%<conv-ant-ds%>:%>ч%{A%}л%{A%}%{ː%} POSS-SG-REF ; ! anteriority proper
+%<conv-sim-ss%>:%>н%{Э%} CONV-NUMBER ; ! contextual simultaneity
+%<conv-sim-ds%>:%>ӈ%{Э%}си%{ː%} POSS-SG-REF ; ! exact simultaneity
+%<conv-ant-ss%>:%>кс%{Э%}%{ː%} CONV-NUMBER ; ! anteriority proper
+%<conv-ant-ds%>:%>ч%{Э%}л%{Э%}%{ː%} POSS-SG-REF ; ! anteriority proper
 %<conv-post-ss%>:%>мне%{ː%} CONV-NUMBER-N ; ! exact simultaneity
-%<conv-post-ds%>:%>%{D%}%{A%}л%{A%}%{ː%} POSS-SG-REF ; ! contextual posteriority
+%<conv-post-ds%>:%>%{D%}%{Э%}л%{Э%}%{ː%} POSS-SG-REF ; ! contextual posteriority
 %<conv-cond-ss%>:%>ми%{ː%} CONV-NUMBER ; ! contextual anteriority
-%<conv-conc-ss%>:%>мн%{A%}к CONV-NUMBER ; ! exact simultaneity
-%<conv-conc-ds%>:%>%{D%}%{Я%}нм%{A%} POSS-SG-PX ; ! exact simultaneity
-%<conv-purp%>:%>%{D%}%{A%}%{ː%} POSS-SG-REF ; ! purposive meaning
-%<conv-purp%>%<int%>:%>%{D%}%{A%}%{ː%}%>м%{A%}к POSS-SG-REF ; ! purposive meaning
-%<conv-int%>:%>вун%{A%} POSS-SG-REF ; ! purposive meaning
-%<conv-nsim%>:%>к%{A%}ним CONV-NUMBER ; ! anteriority proper 
-%<conv-lim%>:%>кн%{A%}н POSS-SG-N-REF ; ! meaning of result
-%<conv-antcnt%>:%>кт%{A%}%{ː%}в%{A%} POSS-SG-REF ; ! contact anteriority
+%<conv-conc-ss%>:%>мн%{Э%}к CONV-NUMBER ; ! exact simultaneity
+%<conv-conc-ds%>:%>%{D%}%{Е%}нм%{Э%} POSS-SG-PX ; ! exact simultaneity
+%<conv-purp%>:%>%{D%}%{Э%}%{ː%} POSS-SG-REF ; ! purposive meaning
+%<conv-purp%>%<int%>:%>%{D%}%{Э%}%{ː%}%>м%{Э%}к POSS-SG-REF ; ! purposive meaning
+%<conv-int%>:%>вун%{Э%} POSS-SG-REF ; ! purposive meaning
+%<conv-nsim%>:%>к%{Э%}ним CONV-NUMBER ; ! anteriority proper 
+%<conv-nsim%>:%>к%{Э%}им CONV-NUMBER ; ! anteriority proper ! Dir/LR
+%<conv-lim%>:%>кн%{Э%}н POSS-SG-N-REF ; ! meaning of result
+%<conv-antcnt%>:%>кт%{Э%}%{ː%}в%{Э%} POSS-SG-REF ; ! contact anteriority
 
 LEXICON CONVERBS
 
 CONVERBS-WITHOUT-COND-SS ;
-%<conv-cond-ds%>:%>р%{A%}к POSS-SG-PX ; ! contextual anteriority
+%<conv-cond-ds%>:%>р%{Э%}к POSS-SG-PX ; ! contextual anteriority
 
 LEXICON NON-FINITE-WITHOUT
 
@@ -1453,17 +1510,21 @@ NON-FINITE ;
 
 ! aspectual
 
-%<impf%>:%>%{D%}%{Я%} V ;
-%<hab%>:%>%{i%}ӈн%{A%}%{ː%} V ;
+%<impf%>:%>%{D%}%{Е%} V ;
+%<impf%>:%>%{D%}и V ; ! Dir/LR
+%<impf%>:%>%{D%}%{Э%} V ; ! Dir/LR
+%<impf%>:%>%{D%}%{Е%} V ; ! Dir/LR
+%<hab%>:%>%{i%}ӈн%{Э%}%{ː%} V ;
 %<dur%>:%{i%}т%{ч%} V ;
 %<inch%>:%{i%}л V ;
 %<smlf%>:%>син V ;
 %<smlf%>:%>с V ; ! Dir/LR
 %<smlf%>:%>си V ; ! Dir/LR
-%<disp%>:%>кт%{A%} V ;
+%<disp%>:%>кт%{Э%} V ;
 %<dstr%>:%>%{i%}т V ; !
-%<quickly%>:%>м%{A%}лч%{A%} V ;
-%<res%>:%>ч%{A%} V ; ! гл. перед преобразуется в у? или прибавляется у?
+%<quickly%>:%>м%{Э%}лч%{Э%} V ;
+%<quickly%>:%>м%{Э%}лдо%{ː%} V ; ! Dir/LR
+%<res%>:%>ч%{Э%} V ; ! гл. перед преобразуется в у? или прибавляется у?
 
 ! non-productive p.255
 ! combinations p.256-257
@@ -1471,36 +1532,39 @@ NON-FINITE ;
 ! modal
 
 %<des%>:%>му V ;
-%<conative%>:%>cc%{A%} V ;
-%<directive%>:%>н%{A%} V ;
+%<conative%>:%>cc%{Э%} V ;
+%<directive%>:%>н%{Э%} V ;
 %<strive-for%>:%>кси V ;
 
 ! evaluative
 
-%<ev1%>:%>к%{A%}кут V ; ! intensive meaning
-%<ev2%>:%>к%{A%}кун V ; ! intensive meaning ! Dir/LR check
+%<ev1%>:%>к%{Э%}кут V ; ! intensive meaning
+%<ev2%>:%>к%{Э%}кун V ; ! intensive meaning ! Dir/LR check
 %<ev3%>:%>кут V ; ! intensive meaning ! Dir/LR check
 %<ev4%>:%>ку%{ː%}н V ; ! intensive meaning ! Dir/LR check
-%<ev5%>:%>к%{A%}т V ; ! endearment to the addressee
-%<ev6%>:%>м%{A%} V ; ! certainty / intensity
-%<ev7%>:%>вл%{A%} V ; ! pejorative, derogatory meaning
-%<ev8%>:%>м%{A%}ты V ;
+%<ev5%>:%>к%{Э%}т V ; ! endearment to the addressee
+%<ev6%>:%>м%{Э%} V ; ! certainty / intensity
+%<ev7%>:%>вл%{Э%} V ; ! pejorative, derogatory meaning
+%<ev8%>:%>м%{Э%}ты V ;
 %<ev9%>:%>ми V ; ! пренебрежение
-%<ev10%>:%>%{Я%}т%{ч%} V ; ! интенсивность действия
+%<ev10%>:%>%{Е%}т%{ч%} V ; ! интенсивность действия
 
-%<caus%>:%>%{V%}%{u%}к%{A%}н V ;
+%<caus%>:%>%{V%}%{u%}к%{Э%}н V ;
 %<pass%>:%>%{В%}%{u%} V ;
+%<pass%>:%>%{Б%} V ; ! Dir/LR check
 %<tr1%>:%>%{В%}%{u%} V ;
-%<tr2%>:%>г%{A%} V ;
+%<tr1%>:%>%{Б%} V ; ! Dir/LR check
+%<tr2%>:%>г%{Э%} V ;
 
 %<comit%>:%>лды V ;
-%<reverse%>:%>лг%{A%} V ;
+%<reverse%>:%>лг%{Э%} V ;
 
-%<amuse%>:%>к%{A%}т V ;
-%<purp%>:%>мк%{A%} V ;
+%<amuse%>:%>к%{Э%}т V ;
+%<purp%>:%>мк%{Э%} V ;
 
-%<decaus%>:%>рг%{A%} V ;
-%<recip%>:%>м%{A%}%{ː%}т%{ч%} V ;
+%<decaus%>:%>рг%{Э%} V ;
+%<recip%>:%>м%{Э%}%{ː%}т%{ч%} V ;
+%<recip%>:%>м%{Э%}%{ː%}cи V ; ! Dir/LR
 
 LEXICON V-IRREG
 
@@ -1512,17 +1576,21 @@ NON-FINITE-WITHOUT ;
 
 ! aspectual
 
-%<impf%>:%>%{D%}%{Я%} V-IRREG ;
-%<hab%>:%>%{i%}ӈн%{A%}%{ː%} V-IRREG ;
+%<impf%>:%>%{D%}%{Е%} V-IRREG ;
+%<impf%>:%>%{D%}и V-IRREG ; ! Dir/LR
+%<impf%>:%>%{D%}%{Э%} V-IRREG ; ! Dir/LR
+%<impf%>:%>%{D%}%{Е%} V-IRREG ; ! Dir/LR
+%<hab%>:%>%{i%}ӈн%{Э%}%{ː%} V-IRREG ;
 %<dur%>:%{i%}т%{ч%} V-IRREG ;
 %<inch%>:%{i%}л V-IRREG ;
 %<smlf%>:%>син V-IRREG ;
 %<smlf%>:%>с V-IRREG ; ! Dir/LR
 %<smlf%>:%>си V-IRREG ; ! Dir/LR
-%<disp%>:%>кт%{A%} V-IRREG ;
+%<disp%>:%>кт%{Э%} V-IRREG ;
 %<dstr%>:%>%{i%}т V-IRREG ; !
-%<quickly%>:%>м%{A%}лч%{A%} V-IRREG ;
-%<res%>:%>ч%{A%} V-IRREG ; ! гл. перед преобразуется в у? или прибавляется у?
+%<quickly%>:%>м%{Э%}лч%{Э%} V-IRREG ;
+%<quickly%>:%>м%{Э%}лдо%{ː%} V-IRREG ; ! Dir/LR
+%<res%>:%>ч%{Э%} V-IRREG ; ! гл. перед преобразуется в у? или прибавляется у?
 
 ! non-productive p.255
 ! combinations p.256-257
@@ -1530,39 +1598,42 @@ NON-FINITE-WITHOUT ;
 ! modal
 
 %<des%>:%>му V-IRREG ;
-%<conative%>:%>cc%{A%} V-IRREG ;
-%<directive%>:%>н%{A%} V-IRREG ;
+%<conative%>:%>cc%{Э%} V-IRREG ;
+%<directive%>:%>н%{Э%} V-IRREG ;
 %<strive-for%>:%>кси V-IRREG ;
 
 ! evaluative
 
-%<ev1%>:%>к%{A%}кут V-IRREG ; ! intensive meaning
+%<ev1%>:%>к%{Э%}кут V-IRREG ; ! intensive meaning
 %<ev1%>:%>кут V-IRREG ; ! Fixme intensive meaning
-%<ev2%>:%>к%{A%}т V-IRREG ; ! endearment to the addressee
-%<ev3%>:%>м%{A%} V-IRREG ; ! certainty / intensity
-%<ev4%>:%>вл%{A%} V-IRREG ; ! pejorative, derogatory meaning
-%<ev5%>:%>м%{A%}ты V-IRREG ;
+%<ev2%>:%>к%{Э%}т V-IRREG ; ! endearment to the addressee
+%<ev3%>:%>м%{Э%} V-IRREG ; ! certainty / intensity
+%<ev4%>:%>вл%{Э%} V-IRREG ; ! pejorative, derogatory meaning
+%<ev5%>:%>м%{Э%}ты V-IRREG ;
 
-%<caus%>:%>%{V%}%{u%}к%{A%}н V-IRREG ;
+%<caus%>:%>%{V%}%{u%}к%{Э%}н V-IRREG ;
 %<pass%>:%>%{В%}%{u%} V-IRREG ;
+%<pass%>:%>%{Б%} V-IRREG ; ! Dir/LR check
 %<tr1%>:%>%{В%}%{u%} V-IRREG ;
-%<tr2%>:%>г%{A%} V-IRREG ;
+%<tr1%>:%>%{Б%} V-IRREG ; ! Dir/LR check
+%<tr2%>:%>г%{Э%} V-IRREG ;
 
 %<comit%>:%>лды V-IRREG ;
-%<reverse%>:%>лг%{A%} V-IRREG ;
+%<reverse%>:%>лг%{Э%} V-IRREG ;
 
-%<amuse%>:%>к%{A%}т V-IRREG ;
-%<purp%>:%>мк%{A%} V-IRREG ;
+%<amuse%>:%>к%{Э%}т V-IRREG ;
+%<purp%>:%>мк%{Э%} V-IRREG ;
 
-%<decaus%>:%>рг%{A%} V-IRREG ;
-%<recip%>:%>м%{A%}%{ː%}т%{ч%} V-IRREG ;
+%<decaus%>:%>рг%{Э%} V-IRREG ;
+%<recip%>:%>м%{Э%}%{ː%}т%{ч%} V-IRREG ;
+%<recip%>:%>м%{Э%}%{ː%}cи V-IRREG ; ! Dir/LR
 
-%<ints1%>:%>к%{A%}ку%{ː%}н V-IRREG ;
-%<ints1%>:%>к%{A%}ку%{ː%}т V-IRREG ; ! Dir/LR
+%<ints1%>:%>к%{Э%}ку%{ː%}н V-IRREG ;
+%<ints1%>:%>к%{Э%}ку%{ː%}т V-IRREG ; ! Dir/LR
 
 %<kun%>:%>ку%{ː%}н V-IRREG ; ! уверенность
 %<mi%>:%>ми V-IRREG ; ! пренебрежение
-%<ints%>:%>%{Я%}т%{ч%} V-IRREG ; ! интенсивность действия
+%<ints%>:%>%{Е%}т%{ч%} V-IRREG ; ! интенсивность действия
 
 LEXICON V-BI
 
@@ -1578,17 +1649,21 @@ CONVERBS ;
 
 ! aspectual
 
-%<impf%>:%>%{D%}%{Я%} V-BI ;
-%<hab%>:%>%{i%}ӈн%{A%}%{ː%} V-BI ;
+%<impf%>:%>%{D%}%{Е%} V-BI ;
+%<impf%>:%>%{D%}и V-BI ; ! Dir/LR
+%<impf%>:%>%{D%}%{Э%} V-BI ; ! Dir/LR
+%<impf%>:%>%{D%}%{Е%} V-BI ; ! Dir/LR
+%<hab%>:%>%{i%}ӈн%{Э%}%{ː%} V-BI ;
 %<dur%>:%{i%}т%{ч%} V-BI ;
 %<inch%>:%{i%}л V-BI ;
 %<smlf%>:%>син V-BI ;
 %<smlf%>:%>с V-BI ; ! Dir/LR
 %<smlf%>:%>си V-BI ; ! Dir/LR
-%<disp%>:%>кт%{A%} V-BI ;
+%<disp%>:%>кт%{Э%} V-BI ;
 %<dstr%>:%>%{i%}т V-BI ; !
-%<quickly%>:%>м%{A%}лч%{A%} V-BI ;
-%<res%>:%>ч%{A%} V-BI ; ! гл. перед преобразуется в у? или прибавляется у?
+%<quickly%>:%>м%{Э%}лч%{Э%} V-BI ;
+%<quickly%>:%>м%{Э%}лдо%{ː%} V-BI ; ! Dir/LR
+%<res%>:%>ч%{Э%} V-BI ; ! гл. перед преобразуется в у? или прибавляется у?
 
 ! non-productive p.255
 ! combinations p.256-257
@@ -1596,39 +1671,42 @@ CONVERBS ;
 ! modal
 
 %<des%>:%>му V-BI ;
-%<conative%>:%>cc%{A%} V-BI ;
-%<directive%>:%>н%{A%} V-BI ;
+%<conative%>:%>cc%{Э%} V-BI ;
+%<directive%>:%>н%{Э%} V-BI ;
 %<strive-for%>:%>кси V-BI ;
 
 ! evaluative
 
-%<ev1%>:%>к%{A%}кут V-BI ; ! intensive meaning
+%<ev1%>:%>к%{Э%}кут V-BI ; ! intensive meaning
 %<ev1%>:%>кут V-BI ; ! Fixme intensive meaning
-%<ev2%>:%>к%{A%}т V-BI ; ! endearment to the addressee
-%<ev3%>:%>м%{A%} V-BI ; ! certainty / intensity
-%<ev4%>:%>вл%{A%} V-BI ; ! pejorative, derogatory meaning
-%<ev5%>:%>м%{A%}ты V-BI ;
+%<ev2%>:%>к%{Э%}т V-BI ; ! endearment to the addressee
+%<ev3%>:%>м%{Э%} V-BI ; ! certainty / intensity
+%<ev4%>:%>вл%{Э%} V-BI ; ! pejorative, derogatory meaning
+%<ev5%>:%>м%{Э%}ты V-BI ;
 
-%<caus%>:%>%{V%}%{u%}к%{A%}н V-BI ;
+%<caus%>:%>%{V%}%{u%}к%{Э%}н V-BI ;
 %<pass%>:%>%{В%}%{u%} V-BI ;
+%<pass%>:%>%{Б%} V-BI ; ! Dir/LR check
 %<tr1%>:%>%{В%}%{u%} V-BI ;
-%<tr2%>:%>г%{A%} V-BI ;
+%<tr1%>:%>%{Б%} V-BI ; ! Dir/LR check
+%<tr2%>:%>г%{Э%} V-BI ;
 
 %<comit%>:%>лды V-BI ;
-%<reverse%>:%>лг%{A%} V-BI ;
+%<reverse%>:%>лг%{Э%} V-BI ;
 
-%<amuse%>:%>к%{A%}т V-BI ;
-%<purp%>:%>мк%{A%} V-BI ;
+%<amuse%>:%>к%{Э%}т V-BI ;
+%<purp%>:%>мк%{Э%} V-BI ;
 
-%<decaus%>:%>рг%{A%} V-BI ;
-%<recip%>:%>м%{A%}%{ː%}т%{ч%} V-BI ;
+%<decaus%>:%>рг%{Э%} V-BI ;
+%<recip%>:%>м%{Э%}%{ː%}т%{ч%} V-BI ;
+%<recip%>:%>м%{Э%}%{ː%}cи V-BI ; ! Dir/LR
 
-%<ints1%>:%>к%{A%}ку%{ː%}н V-BI ;
-%<ints1%>:%>к%{A%}ку%{ː%}т V-BI ; ! Dir/LR
+%<ints1%>:%>к%{Э%}ку%{ː%}н V-BI ;
+%<ints1%>:%>к%{Э%}ку%{ː%}т V-BI ; ! Dir/LR
 
 %<kun%>:%>ку%{ː%}н V-BI ; ! уверенность
 %<mi%>:%>ми V-BI ; ! пренебрежение
-%<ints%>:%>%{Я%}т%{ч%} V-BI ; ! интенсивность действия
+%<ints%>:%>%{Е%}т%{ч%} V-BI ; ! интенсивность действия
 
 LEXICON VERB
 
@@ -1646,7 +1724,7 @@ LEXICON V-AUX-NFUT
 LEXICON NEG-AUX
 
 %<vaux-neg%>: V-AUX-NFUT ;
-%<vaux-neg%>%<hab%>:%>%{i%}ӈн%{A%}%{ː%} NFUT ;
+%<vaux-neg%>%<hab%>:%>%{i%}ӈн%{Э%}%{ː%} NFUT ;
 %<vaux-neg%>%<futcnt%>:%>тэ%{ː%} V-PERS-1-P1P2-SG ;
 %<vaux-neg%>%<futcnt%>:%>тэ%{ː%} V-PERS-1-P3SG-P1PI-P2PL ;
 %<vaux-neg%>%<futcnt%>:%>тэ%{ː%}рэ V-PERS-1-P1PE-P3PL ;
@@ -1654,53 +1732,75 @@ LEXICON NEG-AUX
 %<vaux-neg%>%<futcnt%>:%>то%{ː%} V-PERS-1-P3SG-P1PI-P2PL ;
 %<vaux-neg%>%<futcnt%>:%>то%{ː%}рэ V-PERS-1-P1PE-P3PL ;
 %<vaux-neg%>: TENSE-MOOD-WITHOUT-FUTCNT ;
-%<vaux-neg%>%<hab%>:%>%{i%}ӈн%{A%}%{ː%} TENSE-MOOD ;
+%<vaux-neg%>%<hab%>:%>%{i%}ӈн%{Э%}%{ː%} TENSE-MOOD ;
 %<vaux-neg%>: PARTICIPLES-WITHOUT-PNEG ;
 %<vaux-neg%>%<p-neg%>:%>чэ NOMINAL-INFL ; 
+%<vaux-neg%>%<p-neg%>:%>си NOMINAL-INFL ; ! Dir/LR
 %<vaux-neg%>: CONVERBS ;
 %<vaux-neg%>%<conv-bd%>:%>дели%{ː%} NOMINAL-INFL ;
 
 LEXICON V-DERIV
 
 %<nmlz1%>:%{n%}%>мни%{ː%} N ; ! agent
-%<nmlz2%>:%{n%}%>д%{Я%} N ; ! agent
-%<nmlz3%>:%{n%}%>ӈ%{A%} N ; ! agent
-%<nmlz4%>:%{n%}%>л%{A%}%{ː%} N-N ; ! experienced agent
+%<nmlz2%>:%{n%}%>д%{Е%} N ; ! agent
+%<nmlz3%>:%{n%}%>ӈ%{Э%} N ; ! agent
+%<nmlz4%>:%{n%}%>л%{Э%}%{ː%} N-N ; ! experienced agent
 %<nmlz5%>:%{n%}%>ки%{ː%}т%{ч%} N ; ! place of action
-%<nmlz6%>:%{n%}%>д%{Я%}к N ; ! place of past action
+%<nmlz6%>:%{n%}%>д%{Е%}к N ; ! place of past action
 %<nmlz7%>:%{n%}%>ву%{ː%} N-N ; ! instrument / result of an action
 %<nmlz8%>:%> N ; ! nomen-actionis
 %<nmlz9%>:%{n%}%>мук N ; ! physiological state
-%<nmlz10%>:%{n%}%>с%{A%}%{ː%}мн%{A%} N ; ! remainder/remains/leavings
+%<nmlz10%>:%{n%}%>с%{Э%}%{ː%}мн%{Э%} N ; ! remainder/remains/leavings
 %<nmlz11%>:%{n%}%>р N ; ! process or result of an action
-%<nmlz12%>:%{n%}%>кт%{A%} N ; ! result of an action
+%<nmlz12%>:%{n%}%>кт%{Э%} N ; ! result of an action
 %<nmlz13%>:%{n%}%>пты N-N ; ! object for covering or wrapping up / material or instrument of an action
-%<nmlz14%>:%{n%}%>м%{A%}кт%{A%} N ; ! result of a recent action
-%<nmlz15%>:%{n%}%>нӈ%{A%} N ; ! instrument or result of an action
+%<nmlz14%>:%{n%}%>м%{Э%}кт%{Э%} N ; ! result of a recent action
+%<nmlz15%>:%{n%}%>нӈ%{Э%} N ; ! instrument or result of an action
 %<nmlz16%>:%{n%}%>пту N-N ; ! result of an action
-%<nmlz17%>:%{n%}%>кс%{A%} N ; ! location of action
-%<nmlz18%>:%{n%}%>м%{A%} N-N ;
+%<nmlz17%>:%{n%}%>кс%{Э%} N ; ! location of action
+%<nmlz18%>:%{n%}%>м%{Э%} N-N ;
 %<nmlz19%>:%{n%}%>рук N ;
 %<nmlz20%>:%{n%}%>ӈки%{ː%} N ;
 %<nmlz21%>:%{n%}%>ки%{ː%} N ; ! названия предмета, лица по признаку действия
 %<nmlz22%>:%{n%}%>ни N ; ! название периодов времени, состояния
 
-%<attr1%>:%{n%}%>м%{A%} A ;
-%<attr2%>:%{n%}%>м%{A%}кт%{A%} A ;
+%<attr1%>:%{n%}%>м%{Э%} A ;
+%<attr2%>:%{n%}%>м%{Э%}кт%{Э%} A ;
 %<attr3%>:%{n%}%>кин A ;
-%<attr4%>:%{n%}%>р%{A%} A ;
-%<attr5%>:%{n%}%>к%{A%}с A ;
+%<attr4%>:%{n%}%>р%{Э%} A ;
+%<attr5%>:%{n%}%>к%{Э%}с A ;
 %<attr6%>:%{n%}%>вси A ;
 %<attr7%>:%{n%}%>гин A ;
 %<attr8%>:%{n%}%>ки%{ː%} A ;
-%<attr9%>:%{n%}%>к%{A%} A ;
+%<attr9%>:%{n%}%>к%{Э%} A ;
 %<attr10%>:%{n%}%>пчу A ;
 %<attr11%>:%{n%}%>ты A ;
 
-%<advz-ptɨki%>:%{n%}%>птыки ADV ;
-%<advz2%>:%{n%}%>н%{A%} ADV ;
-%<advz3%>:%{n%}%>мн%{A%}к ADV ;
+! һавалкира̄ hawal-kirā работать-ATR.FAN
 
+! дюктэко̄гдэн ďuktə-kō-gdə-n двое-ATTEN-ATR.MUCH-PS3SG
+! экугдат     əku-gda-t      что-ATR.MUCH-ADVZ х2
+
+! дюрмэ̄нди  ďur-mə̄n-ďi два-ATR.QUANT-ADVZ
+
+! о̄мактава ō-makta-wa делать-ATR.RECPST-ACC
+
+! огон o-γon сделать-ATR.STAT
+
+
+%<advz-ptɨki%>:%{n%}%>птыки ADV ;
+%<advz2%>:%{n%}%>н%{Э%} ADV ;
+%<advz3%>:%{n%}%>мн%{Э%}к ADV ;
+
+! девуркэлтын ďəwu-rkə-lti съесть-PROB-ADVZ.ORDER
+
+! тунӈара̄мия tunŋa-rā-mi-ja пять-ADVZ.QT-ATTEN-RFL
+! о̄кӣра̄-да̄     ōkī-rā=dā      сколько-ADVZ.QT=FOC
+
+
+! дуктэмкорэн-до̄ duktə-mko-rə-n-=dō колотить-CON-NFUT-3SG-=FOC
+! һуруссэлде     huru-ssə-l-ďə        пойти-CON-INCH-PSIMN
+! бунӣшуллэ      buɲī-šu-l-lə-Ø    завыть-CON-INCH-NFUT-3PL
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
@@ -1760,6 +1860,7 @@ LEXICON V-DERIV
 
 туг:ту%{э%}г PART ; ! 'really'! added from freq_list туг-дэ
 туги:туги%{э%} PART ; ! 'really'! added from freq_list туги-дэ
+туг:ту%{э%}г PART ; ! Dir/LR! added from freq_list туг-дэ
 туг:ту%{э%}г PART ; ! Dir/LR! added from freq_list туг-дэ
 са̄бэл:са%{ː%}бэл PART ; ! 'really'
 эчэ:эчэ PART ; ! 'no'
@@ -33962,10 +34063,10 @@ PRON-REF ;
 Аянду:Аянду NP ;
 Аяткуду:Аяткуду NP ;
 Аяя:Аяя NP ;
-Бабаевой:Бабаевой NP ;
-Бабараимовай:Бабараимовай NP ;
+Бабаевойду:Бабаевойду NP ;
+Бабараимовайду:Бабараимовайду NP ;
 Бабич:Бабич NP ;
-Бабкин:Бабки NP-N ;
+Бабкинма:Бабкинма NP ;
 Бабкинодук:Бабкинодук NP ;
 Баварскайду:Баварскайду NP ;
 Багахактак:Багахактак NP ;
@@ -37006,7 +37107,7 @@ PRON-REF ;
 Семенец:Семенец NP-N ;
 Семенович:Семенович NP ;
 Семеновна:Семеновна NP ;
-Семеновнэ:Семеновнэ NP ;
+Семеновнэвэ:Семеновнэвэ NP ;
 Семечко:Семечко NP ;
 Сенмурик:Сенмурик NP ;
 Сенчива:Сенчива NP ;
@@ -37029,6 +37130,7 @@ PRON-REF ;
 Сетыя:Сетыя NP ;
 Сечил:Сечил NP ;
 Сибир:Сибир NP ;! couldn't find in freq_list
+Сибирскаил:Сибирскаил NP ;
 Сибирскай:Сибирскай NP ;
 Сибирь:Сибирь NP ;! couldn't find in freq_list
 Сидоркинай:Сидоркинай NP ;
@@ -37419,6 +37521,7 @@ PRON-REF ;
 Торпушокон:Торпушоко NP-N ;
 Торпушонкал:Торпушонкал NP ;
 Торпушонок:Торпушонок NP ;
+Торпушонокилвэ:Торпушонокилвэ NP ;
 Тоскадук:Тоскадук NP ;
 Тотта:Тотта NP ;
 Традиционнай:Традиционнай NP ;
