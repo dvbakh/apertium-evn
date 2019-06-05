@@ -76,7 +76,7 @@
 
 ! Equation
 %<eqt-gačin%>
-%<eqt-dyn%>          ! сorrect tags
+%<eqt-dyn%>              ! сorrect tags
 
 ! Negation
 %<n-neg%>            ! Negation of nouns
@@ -209,6 +209,7 @@
 %{ч%}                 ! т -> ч and triggers и instead of ы after ч
 %{д%}                 ! т -> д and triggers и instead of ы after д
 %{ь%}                 ! triggers и instead of ы
+%{Ч%}                 ! -ч -с -ш -щ
 %{ː%}
 %{☭%}
 
@@ -395,6 +396,8 @@ POSS-SG-PX ;
 LEXICON POSS-REF
 
 %<ref-sg%>:%>%{V%}и%{ː%} CLITICS ;
+%<ref-sg%>:%>йи CLITICS ; ! Dir/LR
+%<ref-sg%>:%>и CLITICS ; ! Dir/LR
 %<ref-pl%>:%>%{V%}%{A%}р CLITICS ;
 
 LEXICON POSS-SG-REF
@@ -629,7 +632,7 @@ LEXICON TAJ
 
 LEXICON GAČIN
 
-%<eqt-gačin%>:%{G%}%{A%}чи NOMINAL-INFL-N ;
+%<eqt-gačin%>:%{G%}%{A%}%{Ч%}и NOMINAL-INFL-N ;
 
 LEXICON DYN
 
@@ -657,9 +660,9 @@ POSSESSION-EQUATION-ETC ;
 %<eval-kun%>:%>ку%{ː%} N-N ;
 %<eval-mi%>:%>ми%{ː%} N ;
 %<atten-ki%>:%>ки%{ː%} N ;
-%<pejor%>:%>ч%{A%}%{ː%} N-N ;
+%<pejor%>:%>%{Ч%}%{A%}%{ː%} N-N ;
 %<ints1%>:%>к%{A%}%{ː%}ку N-N ;
-%<ints2%>:%>пч%{A%}%{ː%}нэ N ;
+%<ints2%>:%>п%{Ч%}%{A%}%{ː%}нэ N ;
 %<ints3%>:%>м%{A%}м%{A%} N ;
 %<ints3%>:%>м%{A%} N ; ! Dir/LR
 
@@ -670,17 +673,12 @@ POSSESSION-EQUATION-ETC ;
 
 LEXICON ČI
 
-%<attr-či%>:%>чи%{ː%} NOMINAL-INFL-WITHOUT-POSS ;
-
-!LEXICON LAN
-
-!%<attr-lan%>:%>л%{A%}%{ː%} NOMINAL-INFL-N-WITHOUT-POSS ;
+%<attr-či%>:%>%{Ч%}и%{ː%} NOMINAL-INFL-WITHOUT-POSS ;
 
 LEXICON NOUN-SG
 
 %<n%>: N-SG ;
 %<n%>: N-DERIV-ETC ;
-!%<n%>%<child%>:%>тк%{A%}%{ː%} N-N ;
 
 LEXICON NOUN-PL
 
@@ -719,7 +717,7 @@ LEXICON PRON-PERS-CASES-OTHER          ! Except 3rd-person sg and pl
 %<ela%>:%>%{G%}ит%{д%}%{i%} CLITICS ;
 %<com-nun%>:%>нун CLITICS ;
 %<com-gali%>:%>%{G%}%{A%}ли CLITICS ;
-%<eqt-gačin%>:%{G%}%{A%}чи NOMINAL-INFL-N-WITHOUT-POSS ; 
+%<eqt-gačin%>:%{G%}%{A%}%{Ч%}и NOMINAL-INFL-N-WITHOUT-POSS ; 
 DYN ;
 
 PRON-POSS ;
@@ -745,7 +743,7 @@ LEXICON PRON-PERS-POSS-3-SG-CASE-OBL
 %<ins%>%<px3sg%>:ди%>н CLITICS ;
 %<com-nun%>%<px3sg%>:%>нун%>ин CLITICS ;
 %<com-gali%>%<px3sg%>:%>%{G%}%{A%}ли%>ин PRON-PERS-3-PL-PX ;
-%<eqt-gačin%>:%{G%}%{A%}чи NOMINAL-INFL-N-WITHOUT-POSS ; 
+%<eqt-gačin%>:%{G%}%{A%}%{Ч%}и NOMINAL-INFL-N-WITHOUT-POSS ; 
 ! add dyn
 
 LEXICON PRON-PERS-3-PL-PX
@@ -974,7 +972,7 @@ NOMINAL-INFL ;
 LEXICON A
 
 A-INFL ;
-%<pču%>:%>пчу A-INFL ; 
+%<pču%>:%>п%{Ч%}у A-INFL ; 
 
 LEXICON ADJ
 
@@ -1001,7 +999,7 @@ NOMINAL-INFL-N ;
 LEXICON A-N
 
 A-N-INFL ;
-%<pču%>:пчу A-N-INFL ; 
+%<pču%>:п%{Ч%}у A-N-INFL ; 
 
 LEXICON ADJ-N
 
@@ -1162,7 +1160,7 @@ LEXICON FUTCNT
 
 LEXICON TENSE-MOOD-WITHOUT-FUTCNT
 
-%<past%>:%>ч%{A%}%{ː%} V-PERS-2 ;
+%<past%>:%>%{Ч%}%{Я%}%{ː%} V-PERS-2 ;
 %<past-iter%>:%>%{i%}ӈки%{ː%} V-PERS-2 ;
 %<fut%>:%>%{D%}%{Я%}ӈ%{A%}%{ː%} V-PERS-2 ;
 %<futnear%>:%>%{D%}%{Я%}л V-PERS-1-P1P2-SG ;
@@ -1246,13 +1244,13 @@ TENSE-MOOD ;
 
 LEXICON PARTICIPLES-WITHOUT-PSIM-PNEG
 
-%<p-ant%>:%>ч%{A%}%{ː%} NOMINAL-INFL ; 
+%<p-ant%>:%>%{Ч%}%{Я%}%{ː%} NOMINAL-INFL ; 
 %<p-pf%>:%>н%{A%} NOMINAL-INFL-OBLIGATORY-POSS ; 
-%<p-hab%>:%{i%}%>вки%{ː%} NOMINAL-INFL ; 
+%<p-hab%>:%{i%}%>%{V%}ки%{ː%} NOMINAL-INFL ; 
 %<p-post%>:%>%{D%}%{Я%}ӈ%{A%}%{ː%} NOMINAL-INFL ; 
 %<p-deb%>:%>м%{A%}чи%{ː%} NOMINAL-INFL-N ; 
 %<p-purp%>:%>ӈ%{A%}%{ː%}т NOMINAL-INFL ; 
-%<p-impdeb%>:%{i%}%>вк%{A%} NOMINAL-INFL ; 
+%<p-impdeb%>:%{V%}%>к%{A%} NOMINAL-INFL ; 
 %<p-fict%>:%>гс%{A%} NOMINAL-INFL-N ; 
 %<p-immfut%>:%>лт%{A%}к NOMINAL-INFL ; 
 
@@ -1283,7 +1281,7 @@ LEXICON CONVERBS-WITHOUT-COND-SS
 %<conv-sim-ss%>:%>н%{A%} CONV-NUMBER ; 
 %<conv-sim-ds%>:%>ӈ%{A%}си%{ː%} POSS-SG-REF ; 
 %<conv-ant-ss%>:%>кс%{A%}%{ː%} CONV-NUMBER ; 
-%<conv-ant-ds%>:%>ч%{A%}л%{A%}%{ː%} POSS-SG-REF ; 
+%<conv-ant-ds%>:%>%{Ч%}%{A%}л%{A%}%{ː%} POSS-SG-REF ; 
 %<conv-post-ss%>:%>мне%{ː%} CONV-NUMBER-N ; 
 %<conv-post-ds%>:%>%{D%}%{A%}л%{A%}%{ː%} POSS-SG-REF ; 
 %<conv-cond-ss%>:%>ми%{ː%} CONV-NUMBER ; 
@@ -1314,7 +1312,7 @@ PARTICIPLES ;
 LEXICON G-CLITICS
 
 CLITICS ;
-%<eqt-gačin%>:%>%{G%}%{A%}чин CLITICS ;
+%<eqt-gačin%>:%>%{G%}%{A%}%{Ч%}ин CLITICS ;
 
 LEXICON V
 
@@ -1324,6 +1322,7 @@ NON-FINITE ;
 
 ! Aspectual
 %<impf%>:%>%{D%}%{Я%} V ;
+%<impf%>:%>%{D%}и V ; ! Dir/LR
 %<hab%>:%>%{i%}ӈн%{A%}%{ː%} V ;
 %<dur%>:%{i%}т%{ч%} V ;
 %<inch%>:%{i%}л V ;
@@ -1334,7 +1333,7 @@ NON-FINITE ;
 %<dstr%>:%>%{i%}т V ; 
 %<quickly%>:%>м%{A%}лч%{A%} V ;
 %<quickly%>:%>м%{A%}лдо%{ː%} V ;
-%<res%>:%>ч%{A%} V ; 
+%<res%>:%>%{Ч%}%{A%} V ; 
 %<iter%>:%>в%{A%}%{ː%}%{N%} V ;
 
 ! Evaluative
@@ -1403,7 +1402,7 @@ NON-FINITE ;
 %<dstr%>:%>%{i%}т V-IRREG ; 
 %<quickly%>:%>м%{A%}лч%{A%} V-IRREG ;
 %<quickly%>:%>м%{A%}лдо%{ː%} V-IRREG ;
-%<res%>:%>ч%{A%} V-IRREG ; 
+%<res%>:%>%{Ч%}%{A%} V-IRREG ; 
 %<iter%>:%>в%{A%}%{ː%}%{N%} V-IRREG ;
 
 ! Evaluative

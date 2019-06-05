@@ -18,6 +18,7 @@ Alphabet
    у:y
    ӈ:н
    х:һ
+   с:х
 ;
 
 Sets
@@ -41,4 +42,13 @@ Vx:Vy => _  : ;
 
 !нуӈанӈин
 !нунганнгин
-!нунаннин
+!нунаннин 
+
+"һ and х to с in word-initial and intervocalic positions"
+Vx:Vy => Vow: _ Vow: ;
+          .#. _ ;
+   where Vx in ( с с )
+         Vy in ( х һ )
+   matched ;
+        
+
