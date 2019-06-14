@@ -1,5 +1,5 @@
 ###############################################################################
-## Light version of Makefile for apertium-evn relax deriv                    ##
+## Light version of Makefile for apertium-evn                                ##
 ###############################################################################
 
 LANG1=evn
@@ -12,16 +12,16 @@ all: $(LANG1).automorf.hfst $(LANG1).autogen.hfst $(LANG1).segmenter.hfst
 	mkdir -p .deps
 	touch $@
 
-.deps/spellrelax.hfst: dev/spellrelax.twol_relax .deps/.d                        
+.deps/spellrelax.hfst: dev/spellrelax.twol .deps/.d                        
 	hfst-twolc $< -o $@
 
-.deps/$(LANG1).twol.hfst: versions/$(BASENAME).$(LANG1).twol_relax .deps/.d
+.deps/$(LANG1).twol.hfst: $(BASENAME).$(LANG1).twol .deps/.d
 	hfst-twolc $< -o $@
 
-.deps/$(LANG1).RL.lexc: versions/$(BASENAME).$(LANG1).lexc_relax_deriv .deps/.d
+.deps/$(LANG1).RL.lexc: $(BASENAME).$(LANG1).lexc .deps/.d
 	cat $< | grep -v 'Dir/LR' > $@
 
-.deps/$(LANG1).LR.lexc: versions/$(BASENAME).$(LANG1).lexc_relax_deriv .deps/.d
+.deps/$(LANG1).LR.lexc: $(BASENAME).$(LANG1).lexc .deps/.d
 	cat $< | grep -v 'Dir/RL' > $@
 
 .deps/$(LANG1).RL.lexc.hfst: .deps/$(LANG1).RL.lexc
@@ -42,7 +42,7 @@ $(LANG1).autogen.hfst: .deps/$(LANG1).RL.hfst
 $(LANG1).automorf.hfst: .deps/$(LANG1).LR.hfst .deps/spellrelax.hfst                        
 	hfst-compose-intersect -1 $< -2 .deps/spellrelax.hfst | hfst-invert | hfst-fst2fst -O -o $@
 
-dev/segmenter/$(LANG1)-seg.twol.hfst: dev/segmenter/apertium-$(LANG1).$(LANG1)-seg.twol_relax
+dev/segmenter/$(LANG1)-seg.twol.hfst: dev/segmenter/apertium-$(LANG1).$(LANG1)-seg.twol
 	hfst-twolc $< -o $@
 
 dev/segmenter/$(LANG1)-seg.hfst: .deps/$(LANG1).LR.lexc.hfst dev/segmenter/$(LANG1)-seg.twol.hfst

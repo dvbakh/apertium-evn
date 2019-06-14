@@ -1,4 +1,5 @@
 import re
+import os
 import sys
 import hfst
 
@@ -52,7 +53,7 @@ def revert_spellrelax(word, seg, sep=' '):
 
             elif seg_list[i] == 'ӈ':
                 if len(word_list) > j + 1 and \
-                   word_list[j] + word_list[j + 1] == 'нг':
+                    word_list[j] + word_list[j+1] == 'нг':
                     seg_list[i] = 'нг'
                     j += 2
 
@@ -89,7 +90,7 @@ def revert_spellrelax(word, seg, sep=' '):
     return
 
 
-def segment(word, segmenter):
+def segment(word, segmenter, sep=' '):
     """
     Segments a word and returns the segmentations that correspond
     to the original spelling.
@@ -101,13 +102,15 @@ def segment(word, segmenter):
     """
 
     if isinstance(segmenter, str):
+        if not os.path.exists(segmenter):
+            raise ValueError('The segmenter could not be found!')
         segmenter = hfst.HfstInputStream(path).read()
 
     segmentation = segmenter.lookup(word)
 
     res = []
     for seg in segmentation:
-        seg = re.sub('·+', ' ', seg[0])
+        seg = re.sub('·+', sep, seg[0])
 
         reverted = revert_spellrelax(word, seg)
         if reverted and reverted not in res:
@@ -123,16 +126,15 @@ if __name__ == '__main__':
         sys.exit(-1)
 
     word = sys.argv[1]
-    print(sys.argv)
 
     if len(sys.argv) > 2:
         path = sys.argv[2]
     else:
-        path = 'dev/segmenter/evn.segmenter.hfst'
+        path = 'evn.segmenter.hfst'
 
     segmented = segment(word, path)
 
-    if len(segmented) <= 1:
-        print(segmented)
+    if len(segmented) == 1:
+        print(segmented[0])
     else:
         print(', '.join(segmented))
