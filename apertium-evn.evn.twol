@@ -49,6 +49,9 @@ VowE =  э е
 Cons = б в г д ж з й к л м н ӈ п р с т ф х һ ц ч ш щ 
        Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Һ Ц Ч Ш Щ ;
 
+ConsNoV = г д ж з й к л н ӈ р с т х һ ц ч ш щ 
+          Г Д Ж З Й К Л Н Ӈ Р С Т Х Һ Ц Ч Ш Щ ;
+
 Nasal = м н ӈ
         М Н Ӈ ; 
 
@@ -188,7 +191,7 @@ Rules
 
 "Remove {u} after vowel-ending stem when used in <locall> and <prl> cases and after {V}:в before consonant"
 %{u%}:0 <=> %>: %{D%}:0 _ ;
-                %{V%}:в _ %>: :Cons ; 
+                %{V%}:в _ %>: :ConsNoV ;
 
 !# тэты>{V}{u}>{i}м
 !# тэты0ву0{i}м
