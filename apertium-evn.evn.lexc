@@ -253,6 +253,7 @@ LEXICON CLITICS
 %<clit-mak%>:%>%-м%{A%}к CLITICS ;
 %<clit-var%>:%>%-%{V%}%{A%}р CLITICS ; 
 %<clit-ka%>:%>%-к%{A%} CLITICS ;
+%<clit-kat%>:%>%-к%{A%}т CLITICS ;
 %<clit-ta%>:%>%-т%{A%} CLITICS ;
 %<clit-kun%>:%>%-кун CLITICS ;
 %<clit-mat%>:%>%-м%{A%}т CLITICS ;
@@ -34488,6 +34489,7 @@ PRON-RECIP ;
 орловка:орловка%{☭%} NP-TOP ;
 орлов:орлов NP-COG-OB ; 
 оршанко:оршанко NP-COG ;
+осип:осип NP-ANT-RUS ; 
 оскоба:оскоба NP-TOP ;
 остан:оста NP-ANT-N ;
 оськин:оськин NP-COG-OB ;

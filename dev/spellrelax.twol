@@ -13,11 +13,17 @@ Alphabet
       ̄:̅
       ̄:0
    в:ф
+   в:п
    и:ӣ
    у:ӯ
    у:y
+   ӯ:ю̄
+   у:ю̄
+   у:ю
    ӈ:н
    х:һ
+   с:х
+   с:с
 ;
 
 Sets
@@ -32,8 +38,8 @@ Rules
 
 "Lengthened vowels"
 Vx:Vy => _  : ; 
-   where Vx in (  и  у  а  о  е )
-         Vy in (  ӣ  ӯ  ā  ō  ē )
+   where Vx in (  и  у  а  о  е  ю)
+         Vy in (  ӣ  ӯ  ā  ō  ē  ю̄)
    matched ;
 
 "нг to ӈ"
