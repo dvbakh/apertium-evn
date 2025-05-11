@@ -11,7 +11,7 @@ Alphabet
  %{D%}:д %{D%}:т %{D%}:ч
  %{A%}:а %{A%}:э %{A%}:о
  %{Я%}:а %{Я%}:э %{Я%}:о %{Я%}:я %{Я%}:е %{Я%}:ё 
- %{V%}:в %{V%}:м
+ %{V%}:в %{V%}:м %{V%}:п
  %{N%}:н %{N%}:т
 
  %{r%}:р %{r%}:т %{r%}:л %{r%}:н %{r%}:0
@@ -49,7 +49,7 @@ VowE =  э е
 Cons = б в г д ж з й к л м н ӈ п р с т ф х һ ц ч ш щ 
        Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Һ Ц Ч Ш Щ ;
 
-ConsNoV = г д ж з й к л н ӈ р с т х һ ц ч ш щ 
+NonLabialCons = г д ж з й к л н ӈ р с т х һ ц ч ш щ 
           Г Д Ж З Й К Л Н Ӈ Р С Т Х Һ Ц Ч Ш Щ ;
 
 Nasal = м н ӈ
@@ -191,7 +191,12 @@ Rules
 
 "Remove {u} after vowel-ending stem when used in <locall> and <prl> cases and after {V}:в before consonant"
 %{u%}:0 <=> %>: %{D%}:0 _ ;
-                %{V%}:в _ %>: :ConsNoV ;
+              ! Passive
+                %>: %{V%}:в _ %>: :NonLabialCons ;
+              ! Causative
+                %>: %{V%}: _ к %{A%}: н ;
+         except
+                :Nasal %>: %{V%}: _ к %{A%}: н ;
 
 !# тэты>{V}{u}>{i}м
 !# тэты0ву0{i}м
@@ -204,6 +209,16 @@ Rules
 !# тэты>{V}{u}>{r}{A}>н
 !# тэты0в00ра0н
 !@ т э т ы >:0 {V}:в {u}:0 >:0 {r}:р {A}:э >:0 н
+
+! Two Passive Markers
+!# о{ː}>{V}{u}>{V}{u}>ч{A}{ː}
+!# о̄0ву0в00чā
+!@ о {ː}:̄ >:0 {V}:в {u}:у >:0 {V}:в >:0 ч {A}:а {ː}:̄ 
+
+! Causative
+!# о{ː}>{V}{u}к{A}н>д{Я}>ри{ː}
+!# ō0в0кāн0дя0рӣ
+!@ о {ː}:̄ >:0 {V}:в к {A}:а {ː}:̄ н >:0 д {Я}:я >:0 р и {ː}:̄ 
 
 "Voicing assimilation of {g}"
 %{g%}:к <=> :VoicelessCns %>: _ ;
@@ -376,6 +391,5 @@ Rules
 !# дэт>{ъ}{Я}	
 !# дэт0ъе
 !@ д э т >:0 {ъ}:ъ {Я}:е
-
 
 !cat apertium-evn.evn.twol | grep '^!@' | cut -f2 -d'@' | hfst-pair-test .deps/evn.twol.hfst
